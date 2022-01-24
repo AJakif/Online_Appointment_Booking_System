@@ -17,7 +17,8 @@ using System.Threading.Tasks;
 
 namespace AppoinmentManagment.Controllers
 {
-    public class AuthenticationController : Controller
+    [ApiController]
+    public class AuthenticationController : ControllerBase
     {
         private readonly ILogger<AuthenticationController> _logger;
         private readonly IAuthenticationRepository _auth;
@@ -37,7 +38,7 @@ namespace AppoinmentManagment.Controllers
         }
 
         [HttpPost]
-        [Route("register")]
+        [Route("api/register")]
         public IActionResult Register([FromForm] UserModel um)
         {
             _logger.LogInformation("The Register Post methhod has been called");
@@ -48,27 +49,25 @@ namespace AppoinmentManagment.Controllers
 
                 if (userExists == true)
                 {
-                    ViewBag.Error = "Name and Email Already Exists";
-                    return View();
+                    return BadRequest(new { message = "Name and Email Already Exists" });
                 }
                 //If user doesn't exists it inserts data into database
                 int result = _auth.Register(um);
                 if (result > 0)
                 {
                     _logger.LogInformation("User data Inserted");
-                    return RedirectToRoute("default"); //Redirects to Home accounts index view
+                    return Ok(); //Redirects to Home accounts index view
                 }
             }
             catch (NullReferenceException e)
             {
                 _logger.LogError($"Exception - '{e}'");
-                ViewBag.Error = "Registration Failed, Please Try again!";
             }
-            return View();
+            return BadRequest(new { message = "Registration Failed, Please Try again!" });
         }
 
 
-        [Route("login")]
+        [Route("api/login")]
         [HttpPost]
         public IActionResult Login([FromForm]LoginBO lbo)
         {

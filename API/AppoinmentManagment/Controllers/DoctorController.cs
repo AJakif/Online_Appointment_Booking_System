@@ -12,10 +12,11 @@ using System.Threading.Tasks;
 
 namespace AppoinmentManagment.Controllers
 {
+    [ApiController]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Authorize(Roles = "Doctor")]
-    [ApiController]
-    public class DoctorController : Controller
+    
+    public class DoctorController : ControllerBase
     {
         private readonly IAppointmentRepository _appointment;
 
@@ -57,8 +58,9 @@ namespace AppoinmentManagment.Controllers
             }
         }
 
+        [HttpGet]
         [Route("/appointment/visit/{id}")]
-        public JsonResult Visit(string id)
+        public IActionResult Visit(string id)
         {
             try
             {
@@ -66,25 +68,26 @@ namespace AppoinmentManagment.Controllers
                 int result = _appointment.VisitAppointment(id, name);
                 if (result > 0)
                 {
-                    return Json(new { success = true, message = "Visit successful" });
+                    return Ok(new { success = true, message = "Visit successful" });
                 }
                 else
                 {
-                    return Json(new { success = false, message = "Error ." });
+                    return Ok(new { success = false, message = "Error ." });
                 }
             }
             catch (NullReferenceException)
             {
-                return Json(new { success = false, message = "Error , please try again!" });
+                return Ok(new { success = false, message = "Error , please try again!" });
             }
         }
 
+        [HttpGet]
         [Route("/appointment/patient/{id}")]
-        public JsonResult Patient(string id)
+        public IActionResult Patient(string id)
         {
             AppoinmentBO abo = _appointment.GetAppoinmentById(id);
 
-            return Json( new { data = abo } );
+            return Ok( new { data = abo } );
         }
         #endregion
     }

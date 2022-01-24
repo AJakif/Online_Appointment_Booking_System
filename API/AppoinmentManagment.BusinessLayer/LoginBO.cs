@@ -7,10 +7,6 @@ namespace AppoinmentManagment.BusinessLayer
 {
     public class LoginBO
     {
-        [Key]
-        public int OId { get; set; }
-
-
         [Required]
         [EmailAddress]
         public string Email { get; set; }

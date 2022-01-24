@@ -12,10 +12,11 @@ using System.Threading.Tasks;
 
 namespace AppoinmentManagment.Controllers
 {
+    [ApiController]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Authorize(Roles = "Admin")]
-    [ApiController]
-    public class AdminController : Controller
+    
+    public class AdminController : ControllerBase
     {
         private readonly IAdminApiRepository _admin;
         private readonly IAuthenticationRepository _auth;
@@ -42,28 +43,25 @@ namespace AppoinmentManagment.Controllers
 
                 if (userExists == true)
                 {
-                    ViewBag.Error = "Patient's Name and Email Already Exists";
-                    return View();
+                    return BadRequest(new{ message = "Patient's Name and Email Already Exists" });
                 }
                 //If user doesn't exists it inserts data into database
                 int result = _auth.Register(um);
                 if (result > 0)
                 {
                     _logger.LogInformation("patient's data Inserted");
-                    return RedirectToRoute("Admindashboard"); 
+                    return Ok(); 
                 }
                 else
                 {
-                    ViewBag.Error = "Error occured Please contact to It person";
-                    return View();
+                    return BadRequest(new { message = "Error occured Please contact to It person" });
                 }
             }
             catch (NullReferenceException e)
             {
                 _logger.LogError($"Exception - '{e}'");
-                ViewBag.Error = "Registration Failed, Please Try again!";
             }
-            return View();
+            return BadRequest(new { message = "Registration Failed, Please Try again!" });
         }
 
 
@@ -79,82 +77,82 @@ namespace AppoinmentManagment.Controllers
 
                 if (specializationExists == true)
                 {
-                    ViewBag.Error = "Specialization Already Exists";
-                    return View();
+                    return BadRequest(new { message = "Specialization Already Exists" });
                 }
                 
                 int result = _special.Add(sm);
                 if (result > 0)
                 {
                     _logger.LogInformation("specialization data Inserted");
-                    return RedirectToRoute("Admindashboard");
+                    return Ok();
                 }
                 else
                 {
-                    ViewBag.Error = "Error occured Please contact to It person";
-                    return View();
+                    return BadRequest(new { message = "Error occured Please contact to It person" });
                 }
             }
             catch (NullReferenceException e)
             {
                 _logger.LogError($"Exception - '{e}'");
-                ViewBag.Error = "Specialization Adding Failed, Please Try again!";
-                return View();
+                return BadRequest(new { message = "Specialization Adding Failed, Please Try again!" });
             }
             
         }
 
 
         [Route("api/admin/CountPatient")]
-        public JsonResult CountPatient()
+        [HttpGet]
+        public IActionResult CountPatient()
         {
             int patient = _admin.CountPatient();
-            return Json(new { Patient = patient });
+            return Ok(new { Patient = patient });
         }
 
-        
+        [HttpGet]
         [Route("api/admin/CountDoctor")]
-        public JsonResult CountDoctor()
+        public IActionResult CountDoctor()
         {
             int doctor = _admin.CountDoctor();
-            return Json(new { Doctor = doctor });
+            return Ok(new { Doctor = doctor });
         }
 
-        
+        [HttpGet]
         [Route("api/admin/CountSpecialization")]
-        public JsonResult CountSpecialization()
+        public IActionResult CountSpecialization()
         {
             int special = _admin.CountSpecialization();
-            return Json(new { Special = special });
+            return Ok(new { Special = special });
         }
 
-        
+        [HttpGet]
         [Route("api/admin/Balance")]
-        public JsonResult Balance()
+        public IActionResult Balance()
         {
             int balance = _admin.TotalBalance();
-            return Json(new { Balance = balance });
+            return Ok(new { Balance = balance });
         }
 
-        
+        [HttpGet]
         [Route("api/admin/GetAllPatient")]
-        public JsonResult GetAllPatientList()
+        public IActionResult GetAllPatientList()
         {
             List<UserBO> user = _admin.GetAllPatientList();
-            return Json(new { data = user});
+            return Ok(new { data = user});
         }
 
+        [HttpGet]
         [Route("api/admin/Report/monthlyDeposit/")]
-        public JsonResult GetMonthlyDeposit()
+        public IActionResult GetMonthlyDeposit()
         {
             List<MonthlyDepositBO> mdbol = _admin.GetMonthlyDeposit();
-            return Json(mdbol);
+            return Ok(mdbol);
         }
 
+        [HttpGet]
         [Route("api/admin/Report/yearlyDeposit")]
-        public JsonResult GetYearlyDeposit()
+        public IActionResult GetYearlyDeposit()
         {
-            return Json(_admin.GetYearlyDeposit());
+            return Ok(_admin.GetYearlyDeposit());
         }
         #endregion
     }

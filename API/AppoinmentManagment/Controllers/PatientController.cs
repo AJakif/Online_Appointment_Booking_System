@@ -13,10 +13,11 @@ using System.Threading.Tasks;
 
 namespace AppoinmentManagment.Controllers
 {
+    [ApiController]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Authorize(Roles = "Patient")]
-    [ApiController]
-    public class PatientController : Controller
+    
+    public class PatientController : ControllerBase
     {
         private readonly ILogger<PatientController> _logger;
         private readonly IAppointmentRepository _appointment;
@@ -45,7 +46,7 @@ namespace AppoinmentManagment.Controllers
             {
                 AppointmentList = _appointment.GetApprovedAppointmentPatientId(id)
             };
-            return View(labo);
+            return Ok(labo);
         }
 
         [HttpPost]
@@ -125,35 +126,37 @@ namespace AppoinmentManagment.Controllers
 
         [HttpPost]
         [Route("api/patient/appointment/details/{id}")]
-        public JsonResult Patient(string id)
+        public IActionResult Patient(string id)
         {
             AppoinmentBO abo = _appointment.GetAppoinmentById(id);
 
-            return Json(new { data = abo });
+            return Ok(new { data = abo });
         }
 
         [HttpPost]
         [Route("api/patient/doctorFee")]
-        public JsonResult Payment(string id)
+        public IActionResult Payment(string id)
         {
             decimal fees = _payment.GetDoctorFeesById(id);
-            return Json(new { Fee = fees, Appointment = id });
+            return Ok(new { Fee = fees, Appointment = id });
 
         }
 
+        [HttpGet]
         [Route("api/patient/specialization/all")]
-        public JsonResult GetAllSpecialization()
+        public IActionResult GetAllSpecialization()
         {
             List<SpecializationModel> sml = _special.GetAllSpecialization();
-            return Json(new { data = sml});
+            return Ok(new { data = sml});
         }
 
+        [HttpGet]
         [Route("api/patient/getdoctor/{id}")]
-        public JsonResult GetDoctorBySpecialization(int id)
+        public IActionResult GetDoctorBySpecialization(int id)
         {
             List<DoctorBO> doc = _doctor.GetDoctorBySpecialization(id);
 
-            return Json(new { data = doc});
+            return Ok(new { data = doc});
         }
         #endregion
     }

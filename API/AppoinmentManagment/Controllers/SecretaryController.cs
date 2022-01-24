@@ -12,10 +12,11 @@ using System.Threading.Tasks;
 
 namespace AppoinmentManagment.Controllers
 {
+    [ApiController]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Authorize(Roles = "Secretary")]
-    [ApiController]
-    public class SecretaryController : Controller
+    
+    public class SecretaryController : ControllerBase
     {
         private readonly ILogger<SecretaryController> _logger;
         private readonly IAppointmentRepository _appoinment;
@@ -30,6 +31,7 @@ namespace AppoinmentManagment.Controllers
 
         #region API
 
+        [HttpGet]
         [Route("api/secretary/approvedAppointments")]
         public IActionResult Index()
         {
@@ -41,6 +43,7 @@ namespace AppoinmentManagment.Controllers
             return Ok(model);
         }
 
+        [HttpGet]
         [Route("api/secretary/pendingAppointments")]
         public IActionResult GetAllPendingAppointment()
         {
@@ -62,16 +65,16 @@ namespace AppoinmentManagment.Controllers
                 int result = _appoinment.DeclineAppoinment(id,name);
                 if (result > 0)
                 {
-                    return Json(new { success = true, message = "Appoinment Declined successful" });
+                    return Ok(new { success = true, message = "Appoinment Declined successful" });
                 }
                 else
                 {
-                    return Json(new { success = false, message = "Error while Declining appoinment." });
+                    return Ok(new { success = false, message = "Error while Declining appoinment." });
                 }
             }
             catch (NullReferenceException)
             {
-                return Json(new { success = false, message = "Error while Decline, please try again!" });
+                return Ok(new { success = false, message = "Error while Decline, please try again!" });
             }
         }
 
@@ -85,25 +88,26 @@ namespace AppoinmentManagment.Controllers
                 int result = _appoinment.ApproveAppoinment(id,name);
                 if (result > 0)
                 {
-                    return Json(new { success = true, message = "Appoinment approves successful" });
+                    return Ok(new { success = true, message = "Appoinment approves successful" });
                 }
                 else
                 {
-                    return Json(new { success = false, message = "Error while approving appoinment." });
+                    return Ok(new { success = false, message = "Error while approving appoinment." });
                 }
             }
             catch (NullReferenceException)
             {
-                return Json(new { success = false, message = "Error while approving, please try again!" });
+                return Ok(new { success = false, message = "Error while approving, please try again!" });
             }
         }
 
+        [HttpGet]
         [Route("api/secretary/CountPendingAppointment")]
-        public JsonResult CountPendingAppointment()
+        public IActionResult CountPendingAppointment()
         {
             string DrId = HttpContext.GetDrId();
             int appointment = _appoinment.CountPendingAppointment(DrId);
-            return Json(new { Appointment = appointment });
+            return Ok(new { Appointment = appointment });
         }
         #endregion
     }

@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +41,22 @@ namespace AppoinmentManagment
             services.AddTransient<ISecretaryRepository, SecretaryRepository>();
             services.AddTransient<IPaymentRepository, PaymentRepository>();
             services.AddRazorPages();
+            services.AddControllers();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Online Appointment Booking App API",
+                    Version = "v1",
+                    Description = "Description for the API goes here.",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Ahmed Jahin Akif",
+                        Email = string.Empty,
+                        Url = new Uri("https://google.com/"),
+                    },
+                });
+            });
 
             services.AddAuthentication(options =>
             {
@@ -61,6 +78,7 @@ namespace AppoinmentManagment
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Secret"]))
                 };
             });
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,6 +87,8 @@ namespace AppoinmentManagment
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Online Appointment Booking App API v1"));
             }
             else
             {
