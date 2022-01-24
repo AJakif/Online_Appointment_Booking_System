@@ -1,0 +1,42 @@
+﻿@model AppoinmentManagment.BusinessLayer.ListAppoinmentBO
+
+<div class="modal fade" tabindex="-1" role="dialog" id="Record">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Payment</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form asp-action="Prescription">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Appointment.AppointmentId" class="control-label"></label>
+                    <input asp-for="Appointment.AppointmentId" class="form-control" id="id" readonly />
+                    <span asp-validation-for="Appointment.AppointmentId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Appointment.Diesis" class="control-label"></label>
+                    <input asp-for="Appointment.Diesis" class="form-control" />
+                    <span asp-validation-for="Appointment.Diesis" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Appointment.Prescription" class="control-label"></label>
+                    <textarea asp-for="Appointment.Prescription" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="Appointment.Prescription" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Prescribe" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/js/doctor.js"></script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

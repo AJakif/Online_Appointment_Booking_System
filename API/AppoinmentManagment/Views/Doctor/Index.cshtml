@@ -1,0 +1,104 @@
+﻿@model AppoinmentManagment.BusinessLayer.ListAppoinmentBO;
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center text-primary">Doctor Dashboard</h1>
+<hr />
+<div>
+    @if (ViewBag.Success != null)
+    {
+        <span class="text-end alert alert-success" role="alert">@ViewBag.Success</span>
+    }
+    @if (ViewBag.Error != null)
+    {
+        <span class="text-end alert alert-danger" role="alert">@ViewBag.Error</span>
+    }
+
+</div>
+<div class="row">
+    <div class="border backgroundWhite col-12">
+        <br />
+        <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th class="th-sm text-center">Appoinment Id</th>
+                    <th class="th-sm text-center">Patient Name</th>
+                    <th class="th-sm text-center">Appointment Date</th>
+                    <th class="th-sm text-center">Appointment Time</th>
+                    <th class="th-sm text-center">Appointment Status</th>
+                    <th class="th-sm text-center">Action</th>
+                </tr>
+            </thead>
+            <tbody id="tableData">
+                @if (Model.AppointmentList.Count == 0)
+                {
+                    <tr>
+                        <td colspan="6" style="text-align:center">No data</td>
+                    </tr>
+                }
+                else
+                {
+                    @foreach (var appoint in Model.AppointmentList)
+                    {
+                        <tr>
+                            <td class="text-center">@appoint.AppointmentId</td>
+                            <td class="text-center">@appoint.PatientName</td>
+                            <td class="text-center">@appoint.AppointmentDate</td>
+                            <td class="text-center">@appoint.AppointmentTime</td>
+                            <td class="text-center text-success">@appoint.AppointmentStatus</td>
+                            @if (@appoint.IsVisited == 0)
+                            {
+                                <td class=" text-center">
+                                    <div class="text-center">
+                                        <a class="btn btn-primary text-white" style="cursor:pointer; width:50px;" onclick=Patient("/appointment/patient/@appoint.AppointmentId") >
+                                            <i data-toggle="tooltip" data-placement="top" title="Patient Details" class="fas fa-notes-medical"></i>
+                                        </a>
+                                        <a class="btn btn-success text-white" style="cursor:pointer; width:50px;" onclick=Visit("/appointment/visit/@appoint.AppointmentId")>
+                                            <i data-toggle="tooltip" data-placement="top" title="Visited" class="far fa-check-circle"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            }
+                            @if (appoint.IsVisited == 1)
+                            {
+                                @if (appoint.IsPrescribed == 0)
+                                {
+                                    <td class=" text-center">
+                                        <div class="text-center">
+                                            <a class="btn btn-primary text-white prescription" style="cursor:pointer; width:60px;" data-toggle="modal" data-target="#Record" data-id="@appoint.AppointmentId">
+                                                <i data-toggle="tooltip" data-placement="top" title="Prescription" class="fas fa-prescription-bottle-alt"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                }
+                                @if (appoint.IsPrescribed == 1)
+                                {
+                                    <td class=" text-center">
+                                        <div class="text-center">
+                                            <a class="btn btn-primary text-white appdetails" style="cursor:pointer; width:50px;" onclick=Details("/appointment/patient/@appoint.AppointmentId") >
+                                                <i data-toggle="tooltip" data-placement="top" title="Appoinment Details" class="fas fa-notes-medical"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                }
+
+                            }
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<partial name="_prescription.cshtml" />
+
+@section Scripts {
+    <script src="~/js/doctor.js"></script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

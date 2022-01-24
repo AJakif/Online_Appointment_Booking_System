@@ -1,0 +1,37 @@
+﻿@model AppoinmentManagment.BusinessLayer.ListAppoinmentBO;
+<div class="modal fade" tabindex="-1" role="dialog" id="EditRecord">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Payment</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form asp-action="Index">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="Appointment.AppointmentId" class="control-label">Appointment Id</label>
+                    <input asp-for="Appointment.AppointmentId" class="form-control" id="id" readonly/>
+                    <span asp-validation-for="Appointment.AppointmentId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Transaction.Amount" class="control-label"></label>
+                    <input asp-for="Transaction.Amount" class="form-control" id="amount" readonly/>
+                    <span asp-validation-for="Transaction.Amount" class="text-danger"></span>
+                </div>
+                <div class="form-group modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Pay</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/js/payment.js"></script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

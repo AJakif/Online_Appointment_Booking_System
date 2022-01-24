@@ -1,0 +1,100 @@
+﻿@model AppoinmentManagment.BusinessLayer.DoctorRegBO
+@{
+    ViewData["Title"] = "Doctor Reg";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center text-primary">Doctor Regestration</h1>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Register">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div>
+                @if (ViewBag.Error != null)
+                {
+                    <span class="text-end alert alert-danger">@ViewBag.Error</span>
+                }
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Name" class="control-label"></label><span style="color:red">*</span>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Address" class="control-label"></label>
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label asp-for="Gender" class="control-label">Gender</label>
+                    <select class="form-control" asp-for="Gender" name="Gender">
+                        <option></option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="DOB" class="control-label">Date of birth</label><span style="color:red">*</span>
+                    <input asp-for="DOB" type="date" class="form-control" />
+                    <span asp-validation-for="DOB" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="Phone" class="control-label"></label><span style="color:red">*</span>
+                    <input asp-for="Phone" class="form-control" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label asp-for="Fee" class="control-label">Salary</label><span style="color:red">*</span>
+                    <input asp-for="Fee" class="form-control" />
+                    <span asp-validation-for="Fee" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="JoinDate" class="control-label">Joining Date</label><span style="color:red">*</span>
+                    <input asp-for="JoinDate" type="date" class="form-control" />
+                    <span asp-validation-for="JoinDate" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="Status" class="control-label">Status</label><span style="color:red">*</span>
+                    <select class="form-control" asp-for="Status" name="Status">
+                        <option></option>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label asp-for="Specialization" class="control-label">Specialization</label><span style="color:red">*</span>
+                    <select class="form-control" asp-for="Specialization" name="Status" id="special">
+                        <option></option>
+                    </select>
+                    <span asp-validation-for="Specialization" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="Email" class="control-label"></label><span style="color:red">*</span>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="Password" class="control-label"></label><span style="color:red">*</span>
+                    <input asp-for="Password" type="password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Register" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+

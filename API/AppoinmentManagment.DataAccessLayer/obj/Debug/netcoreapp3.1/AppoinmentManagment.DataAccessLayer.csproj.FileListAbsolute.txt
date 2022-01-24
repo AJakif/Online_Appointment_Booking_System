@@ -1,0 +1,45 @@
+F:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.deps.json
+F:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.dll
+F:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.pdb
+F:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.BusinessLayer.dll
+F:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.Models.dll
+F:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.BusinessLayer.pdb
+F:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.Models.pdb
+F:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.csproj.AssemblyReference.cache
+F:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+F:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.AssemblyInfoInputs.cache
+F:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.AssemblyInfo.cs
+F:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.csproj.CoreCompileInputs.cache
+F:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.csproj.CopyComplete
+F:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.dll
+F:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.pdb
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.deps.json
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.dll
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.pdb
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.BusinessLayer.dll
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.Models.dll
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.BusinessLayer.pdb
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.Models.pdb
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.csproj.AssemblyReference.cache
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.AssemblyInfoInputs.cache
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.AssemblyInfo.cs
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.csproj.CoreCompileInputs.cache
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.csproj.CopyComplete
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.dll
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.pdb
+D:\Projects\Online Appointment Booking System\API\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.deps.json
+D:\Projects\Online Appointment Booking System\API\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.dll
+D:\Projects\Online Appointment Booking System\API\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.pdb
+D:\Projects\Online Appointment Booking System\API\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.BusinessLayer.dll
+D:\Projects\Online Appointment Booking System\API\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.Models.dll
+D:\Projects\Online Appointment Booking System\API\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.BusinessLayer.pdb
+D:\Projects\Online Appointment Booking System\API\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.Models.pdb
+D:\Projects\Online Appointment Booking System\API\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.csproj.AssemblyReference.cache
+D:\Projects\Online Appointment Booking System\API\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Online Appointment Booking System\API\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.AssemblyInfoInputs.cache
+D:\Projects\Online Appointment Booking System\API\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.AssemblyInfo.cs
+D:\Projects\Online Appointment Booking System\API\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.csproj.CoreCompileInputs.cache
+D:\Projects\Online Appointment Booking System\API\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.csproj.CopyComplete
+D:\Projects\Online Appointment Booking System\API\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.dll
+D:\Projects\Online Appointment Booking System\API\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.pdb

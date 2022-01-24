@@ -1,0 +1,13 @@
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.BusinessLayer\bin\Release\netcoreapp3.1\AppoinmentManagment.BusinessLayer.deps.json
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.BusinessLayer\bin\Release\netcoreapp3.1\AppoinmentManagment.BusinessLayer.dll
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.BusinessLayer\bin\Release\netcoreapp3.1\AppoinmentManagment.BusinessLayer.pdb
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.BusinessLayer\bin\Release\netcoreapp3.1\AppoinmentManagment.Models.dll
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.BusinessLayer\bin\Release\netcoreapp3.1\AppoinmentManagment.Models.pdb
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.BusinessLayer\obj\Release\netcoreapp3.1\AppoinmentManagment.BusinessLayer.csproj.AssemblyReference.cache
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.BusinessLayer\obj\Release\netcoreapp3.1\AppoinmentManagment.BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.BusinessLayer\obj\Release\netcoreapp3.1\AppoinmentManagment.BusinessLayer.AssemblyInfoInputs.cache
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.BusinessLayer\obj\Release\netcoreapp3.1\AppoinmentManagment.BusinessLayer.AssemblyInfo.cs
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.BusinessLayer\obj\Release\netcoreapp3.1\AppoinmentManagment.BusinessLayer.csproj.CoreCompileInputs.cache
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.BusinessLayer\obj\Release\netcoreapp3.1\AppoinmentManagment.BusinessLayer.csproj.CopyComplete
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.BusinessLayer\obj\Release\netcoreapp3.1\AppoinmentManagment.BusinessLayer.dll
+D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.BusinessLayer\obj\Release\netcoreapp3.1\AppoinmentManagment.BusinessLayer.pdb

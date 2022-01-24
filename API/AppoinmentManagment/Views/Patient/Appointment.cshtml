@@ -1,0 +1,71 @@
+﻿@model AppoinmentManagment.BusinessLayer.AppoinmentBO
+
+@{
+    ViewData["Title"] = "Appointment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Doctor's Appointment</h1>
+<hr />
+<div class="row">
+    <div class="col-12">
+        <form asp-action="Appointment">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div>
+                @if (ViewBag.Error != null)
+                {
+                    <span class="text-end alert alert-danger">@ViewBag.Error</span>
+                    <br />
+                    <br />
+                }
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label class="control-label">Specialization</label>
+                    <select class="form-control" name="specialization" id="specialization" onchange="HandleChange(this.id,'doctor')">
+                    </select>
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="DoctorId" class="control-label">Doctor</label>
+                    <select class="form-control" asp-for="DoctorId" id="doctor" onchange="alert(this.value)">
+                    </select>
+                    <span asp-validation-for="DoctorId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label asp-for="AppointmentDate" class="control-label"></label>
+                    <input type="date" asp-for="AppointmentDate" class="form-control" />
+                    <span asp-validation-for="AppointmentDate" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="AppointmentTime" class="control-label"></label>
+                    <input type="time" asp-for="AppointmentTime" class="form-control" />
+                    <span asp-validation-for="AppointmentTime" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Symptom" class="control-label"></label>
+                    <textarea asp-for="Symptom" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="Symptom" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Medication" class="control-label"></label>
+                    <textarea asp-for="Medication" class="form-control" rows="3"></textarea>
+                    <span asp-validation-for="Medication" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/Appointment.js"></script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

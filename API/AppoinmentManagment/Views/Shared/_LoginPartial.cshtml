@@ -1,0 +1,23 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+
+<ul class="navbar-nav">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <li class="nav-item">
+            <a class="nav-link " title="Manage">Hello @User.FindFirst("Name").Value!</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " asp-controller="Authentication" asp-action="Logout">Logout</a>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link " asp-controller="Authentication" asp-action="Register">Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " asp-controller="Authentication" asp-action="Login">Login</a>
+        </li>
+    }
+</ul>

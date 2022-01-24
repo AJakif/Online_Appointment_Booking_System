@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "I0CSsP2GG4q//+/6qWT0zNjUtYP1J/GhkMMxwr6zF+dHWcJhzIzTs2quXCWHbazb45+X21vQ6pL7V72j+oHLyw==",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.Models\\AppoinmentManagment.Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jahin.akif\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512",
+    "C:\\Users\\jahin.akif\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

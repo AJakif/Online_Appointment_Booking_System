@@ -1,0 +1,72 @@
+﻿@model AppoinmentManagment.BusinessLayer.ListAppoinmentBO
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center text-primary">Secretary Dashboard</h1>
+<hr />
+<div class="row">
+    <div class="col-sm-3 col-3">
+        <!-- small card -->
+        <div class="small-box bg-success">
+            <div class="inner">
+                <h3 id="appoinmentCount"></h3>
+
+                <p>Total Pending Appoinments</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-user-plus"></i>
+            </div>
+            <a asp-route="GetAllPendingAppointment" class="small-box-footer">
+                More info <i class="fas fa-arrow-circle-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<br />
+<div class="row">
+    <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th class="th-sm text-center">Appoinment Id</th>
+                <th class="th-sm text-center">Patient Name</th>
+                <th class="th-sm text-center">Doctor Name</th>
+                <th class="th-sm text-center">Appointment Date</th>
+                <th class="th-sm text-center">Appointment Time</th>
+                <th class="th-sm text-center">Appointment Status</th>
+            </tr>
+        </thead>
+        <tbody id="tableData">
+            @if (Model.AppointmentList.Count == 0)
+            {
+                <tr>
+                    <td colspan="5" style="text-align:center">No data</td>
+                </tr>
+            }
+            else
+            {
+                @foreach (var appoint in Model.AppointmentList)
+                {
+                    <tr>
+                        <td class=" text-center">@appoint.AppointmentId</td>
+                        <td class="text-center">@appoint.PatientName</td>
+                        <td class=" text-center">@appoint.DoctorName</td>
+                        <td class=" text-center">@appoint.AppointmentDate</td>
+                        <td class=" text-center">@appoint.AppointmentTime</td>
+                        <td class=" text-center">@appoint.AppointmentStatus</td>
+
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+</div>
+
+
+@section Scripts {
+    <script src="~/js/SecretaryDashboard.js"></script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
