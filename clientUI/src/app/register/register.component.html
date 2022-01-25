@@ -1,1 +1,62 @@
-<p>register works!</p>
+<div class="container">
+  <h1>Register</h1>
+  <hr />
+  <div class="row">
+    <div class="col-md-12">
+      <form>
+        <div class="row mb-3">
+          <div class="form-group col-md-6">
+            <label class="control-label">Name</label
+            ><span style="color: red">*</span>
+            <input class="form-control" />
+          </div>
+          <div class="form-group col-md-6">
+            <label class="control-label">Address</label>
+            <input class="form-control" />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="form-group col-md-4">
+            <label class="control-label">Gender</label>
+            <select class="form-control" name="Gender">
+              <option></option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <label class="control-label">Date of birth</label
+            ><span style="color: red">*</span>
+            <input type="date" class="form-control" />
+          </div>
+          <div class="form-group col-md-4">
+            <label class="control-label">Phone</label
+            ><span style="color: red">*</span>
+            <input class="form-control" />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="form-group col-md-6">
+            <label class="control-label">Email</label
+            ><span style="color: red">*</span>
+            <input class="form-control" />
+          </div>
+          <div class="form-group col-md-6">
+            <label class="control-label">Password</label
+            ><span style="color: red">*</span>
+            <input type="password" class="form-control" />
+          </div>
+        </div>
+
+        <div class="form-group mb-2">
+          <input type="submit" value="Register" class="btn btn-primary" />
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div>
+    <a routerLink="/">Back to Home</a>
+  </div>
+</div>

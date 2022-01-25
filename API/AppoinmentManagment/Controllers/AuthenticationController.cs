@@ -39,7 +39,7 @@ namespace AppoinmentManagment.Controllers
 
         [HttpPost]
         [Route("api/register")]
-        public IActionResult Register([FromForm] UserModel um)
+        public IActionResult Register([FromBody] UserModel um)
         {
             _logger.LogInformation("The Register Post methhod has been called");
             try
@@ -69,7 +69,7 @@ namespace AppoinmentManagment.Controllers
 
         [Route("api/login")]
         [HttpPost]
-        public IActionResult Login([FromForm]LoginBO lbo)
+        public IActionResult Login([FromBody]LoginBO lbo)
         {
             try
             {
@@ -154,7 +154,7 @@ namespace AppoinmentManagment.Controllers
                         var token = new JwtSecurityToken(
                             issuer: _configuration["JWT:ValidIssuer"],
                             audience: _configuration["JWT:ValidAudience"],
-                            expires: DateTime.Now.AddMinutes(30),
+                            expires: DateTime.Now.AddMinutes(10),
                             claims: claims,
                             signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
                             );
@@ -169,7 +169,7 @@ namespace AppoinmentManagment.Controllers
                 }
                 else
                 {
-                    return BadRequest("Wrong Email & Password, please try again");
+                    return BadRequest(new { message = "Wrong Email & Password, please try again" });
                 }
             }
             catch (NullReferenceException e)

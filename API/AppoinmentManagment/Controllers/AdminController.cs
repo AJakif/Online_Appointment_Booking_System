@@ -33,7 +33,7 @@ namespace AppoinmentManagment.Controllers
         #region API
         [HttpPost]
         [Route("api/admin/addpatient")]
-        public IActionResult AddPatient([FromForm] UserModel um)
+        public IActionResult AddPatient([FromBody] UserModel um)
         {
             _logger.LogInformation("The Register Post method has been called");
             try
@@ -67,7 +67,7 @@ namespace AppoinmentManagment.Controllers
 
         [HttpPost]
         [Route("api/admin/addspecialization")]
-        public IActionResult AddSpecialization([FromForm] SpecializationModel sm)
+        public IActionResult AddSpecialization([FromBody] SpecializationModel sm)
         {
             _logger.LogInformation("The Specialization Post method has been called");
             try

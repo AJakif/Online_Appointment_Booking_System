@@ -51,7 +51,7 @@ namespace AppoinmentManagment.Controllers
 
         [HttpPost]
         [Route("api/patient/payment")]
-        public IActionResult Pay([FromForm] ListAppoinmentBO listabo)
+        public IActionResult Pay([FromBody] ListAppoinmentBO listabo)
         {
             try
             {
@@ -88,7 +88,7 @@ namespace AppoinmentManagment.Controllers
 
         [HttpPost]
         [Route("api/patient/giveAppoinment")]
-        public IActionResult Appointment([FromForm] AppoinmentBO abo)
+        public IActionResult Appointment([FromBody] AppoinmentBO abo)
         {
             (int id, _) = HttpContext.GetUserInfo();
             (_, string name) = HttpContext.GetUserInfo();

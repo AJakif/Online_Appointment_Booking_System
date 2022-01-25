@@ -40,8 +40,7 @@ namespace AppoinmentManagment.Controllers
 
         [HttpPost]
         [Route("api/doctor/givePrescription")]
-
-        public IActionResult Prescription([FromForm] ListAppoinmentBO labo)
+        public IActionResult Prescription([FromBody] ListAppoinmentBO labo)
         {
             string prescription = labo.Appointment.Prescription;
             string appointmentId = labo.Appointment.AppointmentId;
