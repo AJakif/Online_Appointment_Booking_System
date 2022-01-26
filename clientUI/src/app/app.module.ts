@@ -19,6 +19,16 @@ import { AuthInterceptor } from './_auth/auth.interceptor';
 import { UserService } from './_services/user.service';
 import { DoctorComponent } from './doctor/doctor.component';
 import { SecretaryComponent } from './secretary/secretary.component';
+import { SmallCardComponent } from './components/small-card/small-card.component';
+import { AddDoctorComponent } from './admin/add-doctor/add-doctor.component';
+import { AddPatientComponent } from './admin/add-patient/add-patient.component';
+import { AddSpecializationComponent } from './admin/add-specialization/add-specialization.component';
+import { GetAllDoctorComponent } from './admin/get-all-doctor/get-all-doctor.component';
+import { GetAllPatientComponent } from './admin/get-all-patient/get-all-patient.component';
+import { GetAllSpecializationComponent } from './admin/get-all-specialization/get-all-specialization.component';
+import { RouteButtonComponent } from './components/route-button/route-button.component';
+import { GetAllPendinAppointmentComponent } from './secretary/get-all-pendin-appointment/get-all-pendin-appointment.component';
+import { AppointmentComponent } from './patient/appointment/appointment.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +42,17 @@ import { SecretaryComponent } from './secretary/secretary.component';
     RegisterComponent,
     FooterComponent,
     DoctorComponent,
-    SecretaryComponent
+    SecretaryComponent,
+    SmallCardComponent,
+    AddDoctorComponent,
+    AddPatientComponent,
+    AddSpecializationComponent,
+    GetAllDoctorComponent,
+    GetAllPatientComponent,
+    GetAllSpecializationComponent,
+    RouteButtonComponent,
+    GetAllPendinAppointmentComponent,
+    AppointmentComponent
   ],
   imports: [
     BrowserModule,

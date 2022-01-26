@@ -1,3 +1,4 @@
+import { getLocaleDayNames } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserAuthService } from '../_services/user-auth.service';
@@ -10,12 +11,18 @@ import { UserService } from '../_services/user.service';
 })
 export class HeaderComponent implements OnInit {
 
+  name: string ="";
   constructor(
     private userAuthService: UserAuthService,
     private router: Router,
     private userService:UserService
     ) { }
   ngOnInit(): void { 
+  }
+
+  getName()
+  {
+    return this.userAuthService.getName();
   }
 
   public roleMatch(role:string){

@@ -56,7 +56,7 @@ namespace AppoinmentManagment.Controllers
                 if (result > 0)
                 {
                     _logger.LogInformation("User data Inserted");
-                    return Ok(); //Redirects to Home accounts index view
+                    return Ok(new { message = "success" }); //Redirects to Home accounts index view
                 }
             }
             catch (NullReferenceException e)

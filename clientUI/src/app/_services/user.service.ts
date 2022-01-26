@@ -21,6 +21,10 @@ export class UserService {
     return this.httpclient.post(this.PATH_OF_API + "/login", loginData, {headers:this.requestHeader});
   }
 
+  public resigtration(regData:any){
+    return this.httpclient.post(this.PATH_OF_API + "/register", regData, {headers:this.requestHeader});
+  }
+
   public roleMatch(allowedRole:string): boolean{
     let isMatch = false;
     const role = this.userAuth.getRole();

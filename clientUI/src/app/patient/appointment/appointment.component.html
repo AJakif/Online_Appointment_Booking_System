@@ -1,0 +1,46 @@
+<div class="container">
+    <h1>Doctor's Appointment</h1>
+<hr />
+<div class="row">
+    <div class="col-12">
+        <form >
+            <div class="row mb-2">
+                <div class="form-group col-md-6">
+                    <label class="control-label">Specialization</label>
+                    <select class="form-control form-select" name="specialization" id="specialization" onchange="HandleChange(this.id,'doctor')">
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="DoctorId" class="control-label">Doctor</label>
+                    <select class="form-control form-select" asp-for="DoctorId" id="doctor" onchange="alert(this.value)">
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="form-group col-md-6">
+                    <label asp-for="AppointmentDate" class="control-label">Appointment Date</label>
+                    <input type="date" asp-for="AppointmentDate" class="form-control" />
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="AppointmentTime" class="control-label">Appoinment Time</label>
+                    <input type="time" asp-for="AppointmentTime" class="form-control" />
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="form-group col-md-6">
+                    <label asp-for="Symptom" class="control-label">Symptom</label>
+                    <textarea asp-for="Symptom" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Medication" class="control-label">Medication</label>
+                    <textarea asp-for="Medication" class="form-control" rows="3"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+</div>

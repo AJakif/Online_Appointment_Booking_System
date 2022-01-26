@@ -1,0 +1,35 @@
+<div class="container">
+  <h1 class="text-center text-primary">-Patient List-</h1>
+  <div class="row">
+    <app-route-button
+      [btnColor]="'primary'"
+      [btnPosition]="'float-end'"
+      [title]="'Add Patient'"
+      [link]="'/admin/addPatient'"
+      [icon]="'fas fa-plus'"
+    ></app-route-button>
+  </div>
+  <br />
+  <div class="row">
+    <div class="border backgroundWhite col-lg">
+      <br />
+      <table
+        id="dtBasicExample"
+        class="table table-striped table-bordered table-sm"
+        cellspacing="0"
+        width="100%"
+      >
+        <thead>
+          <tr>
+            <th class="th-sm text-center">Name</th>
+            <th class="th-sm text-center">Phone</th>
+            <th class="th-sm text-center">Address</th>
+            <th class="th-sm text-center">Date of Birth</th>
+            <th class="th-sm text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableData"></tbody>
+      </table>
+    </div>
+  </div>
+</div>

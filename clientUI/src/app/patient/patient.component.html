@@ -1,1 +1,15 @@
-<p>patient works!</p>
+<div class="container">
+  <h1 class="text-center">Patient Dashboard</h1>
+  <hr />
+  <div class="row">
+    <div class="col-sm-3 col-3">
+      <app-small-card
+        [background]="'success'"
+        [info]="true"
+        [mainicon]="'fas fa-user-plus'"
+        [link]="'/patient/appointment'"
+        [title]="'Take Appoinment'"
+      ></app-small-card>
+    </div>
+  </div>
+</div>

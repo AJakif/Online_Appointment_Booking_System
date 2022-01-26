@@ -1,0 +1,76 @@
+<div class="container">
+    <h1 class="text-center text-primary">Doctor Regestration</h1>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form > 
+            <div class="row mb-2">
+                <div class="form-group col-md-6">
+                    <label asp-for="Name" class="control-label">Name</label><span style="color:red">*</span>
+                    <input asp-for="Name" class="form-control" />
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Address" class="control-label">Address</label>
+                    <input asp-for="Address" class="form-control" />
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="form-group col-md-4">
+                    <label asp-for="Gender" class="control-label">Gender</label>
+                    <select class="form-control form-select" asp-for="Gender" name="Gender">
+                        <option></option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="DOB" class="control-label">Date of birth</label><span style="color:red">*</span>
+                    <input asp-for="DOB" type="date" class="form-control" />
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="Phone" class="control-label">Phone</label><span style="color:red">*</span>
+                    <input asp-for="Phone" class="form-control" />
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="form-group col-md-4">
+                    <label asp-for="Fee" class="control-label">Salary</label><span style="color:red">*</span>
+                    <input asp-for="Fee" class="form-control" />
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="JoinDate" class="control-label">Joining Date</label><span style="color:red">*</span>
+                    <input asp-for="JoinDate" type="date" class="form-control" />
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="Status" class="control-label">Status</label><span style="color:red">*</span>
+                    <select class="form-control form-select" asp-for="Status" name="Status">
+                        <option></option>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="form-group col-md-4">
+                    <label asp-for="Specialization" class="control-label">Specialization</label><span style="color:red">*</span>
+                    <select class="form-control form-select" asp-for="Specialization" name="Status" id="special">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="Email" class="control-label">Email</label><span style="color:red">*</span>
+                    <input asp-for="Email" class="form-control" />
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="Password" class="control-label">Password</label><span style="color:red">*</span>
+                    <input asp-for="Password" type="password" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+</div>

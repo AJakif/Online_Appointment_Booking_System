@@ -1,1 +1,46 @@
-<p>admin works!</p>
+<div class="container">
+  <h1 class="text-center">Admin Dashboard</h1>
+  <hr />
+  <div class="row">
+    <div class="col-sm-3 col-3">
+      <app-small-card
+        [background]="'success'"
+        [info]="true"
+        [count]="12"
+        [mainicon]="'fas fa-user-plus'"
+        [link]="'/admin/getAllPatient'"
+        [title]="'Total Patient'"
+      ></app-small-card>
+    </div>
+    <div class="col-sm-3 col-3">
+      <app-small-card
+        [background]="'primary'"
+        [info]="true"
+        [count]="10"
+        [mainicon]="'fas fa-user-md'"
+        [link]="'/admin/getAllDoctor'"
+        [title]="'Total Doctors'"
+      ></app-small-card>
+    </div>
+    <div class="col-sm-3 col-3">
+      <app-small-card
+        [background]="'danger'"
+        [info]="true"
+        [count]="3"
+        [mainicon]="'fas fa-users'"
+        [link]="'/admin/getAllSpecialization'"
+        [title]="'Total Specialization'"
+      ></app-small-card>
+    </div>
+    <div class="col-sm-3 col-3">
+      <app-small-card
+        [background]="'warning'"
+        [info]="false"
+        [count]="100"
+        [mainicon]="'fas fa-wallet'"
+        [symbol]="'$'"
+        [title]="'Company Balance'"
+      ></app-small-card>
+    </div>
+  </div>
+</div>

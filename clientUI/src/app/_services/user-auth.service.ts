@@ -51,6 +51,6 @@ export class UserAuthService {
     this.clearTimeout = setTimeout(() => {
       this.clear();
       this.router.navigate(['/']);
-    }, 180000);
+    }, 1800000);
   }
 }
