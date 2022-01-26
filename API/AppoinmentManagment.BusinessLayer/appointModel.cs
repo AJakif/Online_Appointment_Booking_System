@@ -5,13 +5,8 @@ using System.Text;
 
 namespace AppoinmentManagment.BusinessLayer
 {
-    public class AppoinmentBO
+    public class AppointModel
     {
-        
-        public string AppointmentId { get; set; }
-
-        public string PatientName { get; set; }
-        public string DoctorName { get; set; }
         public string Specialization { get; set; }
 
         [Required]
@@ -23,6 +18,7 @@ namespace AppoinmentManagment.BusinessLayer
         [Required]
         public string AppointmentTime { get; set; }
 
+        
         public string AppointmentStatus { get; set; }
 
         [Required]
@@ -31,15 +27,6 @@ namespace AppoinmentManagment.BusinessLayer
         [Required]
         public string Medication { get; set; }
 
-        public string Diesis { get; set; }
-
-        public string Prescription { get; set; }
-
-        public int IsVisited { get; set; }
-        public int IsPaid { get; set; }
-
-        public int IsPrescribed { get; set; }
-
-        public List<AppoinmentBO> AppoinmentList { get; set; }
+       
     }
 }

@@ -12,4 +12,98 @@
       ></app-small-card>
     </div>
   </div>
+  <div class="row">
+    <div class="border backgroundWhite col-12">
+      <br />
+      <table
+        id="dtBasicExample"
+        class="table table-striped table-bordered table-sm"
+        cellspacing="0"
+        width="100%"
+      >
+        <thead>
+          <tr>
+            <th class="th-sm text-center">Appoinment Id</th>
+            <th class="th-sm text-center">Doctor Name</th>
+            <th class="th-sm text-center">Appointment Date</th>
+            <th class="th-sm text-center">Appointment Time</th>
+            <th class="th-sm text-center">Appointment Status</th>
+            <th class="th-sm text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let appoint of appointment" id="tableData">
+          <tr *ngIf="!appointment">
+            <td colspan="6" style="text-align: center">No data</td>
+          </tr>
+          <tr *ngIf="appointment">
+            <td class="text-center">{{ appoint.appointmentId }}</td>
+            <td class="text-center">{{ appoint.doctorName }}</td>
+            <td class="text-center">{{ appoint.appointmentDate }}</td>
+            <td class="text-center">{{ appoint.appointmentTime }}</td>
+            <td
+              class="{{
+                appoint.appointmentStatus === 'Approved'
+                  ? 'text-center text-success'
+                  : 'text-center text-danger'
+              }}"
+            >
+              {{ appoint.appointmentStatus }}
+            </td>
+
+            <td *ngIf="appoint.isPaid === 0" class="text-center">
+              <div class="text-center">
+                <a
+                  class="btn btn-success text-white edit"
+                  style="cursor: pointer; width: 60px"
+                  data-toggle="modal"
+                  data-target="#EditRecord"
+                  data-id="@appoint.AppointmentId"
+                >
+                  <i
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Pay Doctor Fees"
+                    class="fas fa-money-bill-wave"
+                  ></i>
+                </a>
+              </div>
+            </td>
+            <td
+              *ngIf="
+                appoint.isPaid === 1 &&
+                appoint.isPrescribed === 0 &&
+                appoint.isVisited === 1
+              "
+              class="text-center"
+            >
+              <div class="text-center text-success">Paid</div>
+            </td>
+            <td
+              *ngIf="
+                appoint.isPaid === 1 &&
+                appoint.isPrescribed === 1 &&
+                appoint.isVisited === 1
+              "
+              class="text-center"
+            >
+              <div class="text-center">
+                <a
+                  class="btn btn-primary text-white"
+                  style="cursor: pointer; width: 60px"
+                >
+                  <i
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Prescription"
+                    class="fas fa-notes-medical"
+                  ></i>
+                  <!-- onclick=Details("/appointment/details/@appoint.AppointmentId") -->
+                </a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

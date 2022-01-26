@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SecretaryApiService } from 'src/app/_services/secretary-api.service';
 
 @Component({
   selector: 'app-get-all-pendin-appointment',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GetAllPendinAppointmentComponent implements OnInit {
 
-  constructor() { }
+  appointment:any = null;
+  constructor(private secretaryService: SecretaryApiService) { }
 
   ngOnInit(): void {
+
+    this.secretaryService.pendingAppointments().subscribe(
+      (response:any)=>{
+        console.log(response.appointmentList.length)
+        if(response.appointmentList.length === 0)
+        {
+          this.appointment = null
+        }
+        else{
+          this.appointment = response.appointmentList;
+        }
+        
+      },
+      (error)=>{
+        console.log(error);
+      }
+    );
   }
 
 }

@@ -109,7 +109,7 @@ namespace AppoinmentManagment.Controllers
                 if (result > 0)
                 {
                     _logger.LogInformation("Appointment data Inserted");
-                    return Ok();
+                    return Ok(new { message = "Successful Appointment" });
                 }
                 else
                 {
@@ -124,7 +124,7 @@ namespace AppoinmentManagment.Controllers
         }
 
 
-        [HttpPost]
+        [HttpGet]
         [Route("api/patient/appointment/details/{id}")]
         public IActionResult Patient(string id)
         {
