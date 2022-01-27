@@ -18,8 +18,8 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    
-      if(this.userAuthService.getToken() !== null){
+    const token = this.userAuthService.getToken();
+      if(token !== 'null'){
         const role:string = route.data["roles"];
         if(role)
         {
@@ -29,11 +29,13 @@ export class AuthGuard implements CanActivate {
             return true;
           }
           else{
+            console.log("role not matched")
             this.router.navigate(['/forbidden']);
             return false;
           }
         }
       }
+      
       this.router.navigate(['/login']);
       return false;
   }

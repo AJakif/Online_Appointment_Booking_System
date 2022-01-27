@@ -16,7 +16,6 @@
             <th class="th-sm text-center">Patient Name</th>
             <th class="th-sm text-center">Appointment Date</th>
             <th class="th-sm text-center">Appointment Time</th>
-            <th class="th-sm text-center">Appointment Status</th>
             <th class="th-sm text-center">Action</th>
           </tr>
         </thead>
@@ -29,13 +28,10 @@
             <td class="text-center">{{ appoint.patientName }}</td>
             <td class="text-center">{{ appoint.appointmentDate }}</td>
             <td class="text-center">{{ appoint.appointmentTime }}</td>
-            <td class="text-center text-success">
-              {{ appoint.appointmentStatus }}
-            </td>
             <td *ngIf="appoint.isVisited === 0" class="text-center">
               <div class="text-center">
                 <a
-                  class="btn btn-primary text-white me-1"
+                  class="btn btn-warning text-white me-1"
                   style="cursor: pointer; width: 50px"
                   data-bs-toggle="modal"
                   data-bs-target="#appDetails"
@@ -46,7 +42,7 @@
                     data-toggle="tooltip"
                     data-placement="top"
                     title="Patient Details"
-                    class="fas fa-notes-medical"
+                    class="fas fa-user"
                   ></i>
                 </a>
                 <a
@@ -176,12 +172,14 @@
             <input  formControlName="appointmentId" class="form-control" id="id" readonly />
         </div>
         <div class="form-group">
-            <label  class="control-label">Diesis</label>
+            <label  class="control-label">Diesis</label><span style="color: red">*</span>
             <input  formControlName="diesis" class="form-control" />
+            <small *ngIf="Diesis && Diesis.invalid &&  Diesis.touched"class="text-danger">Diesis Is required</small>
         </div>
         <div class="form-group">
-            <label  class="control-label">Prescription</label>
+            <label  class="control-label">Prescription</label><span style="color: red">*</span>
             <textarea formControlName="prescription" class="form-control" rows="3"></textarea>
+            <small *ngIf="Prescription && Prescription.invalid &&  Prescription.touched"class="text-danger">Prescription Is required</small>
         </div>
         </div>
         <div class="modal-footer">
@@ -193,7 +191,7 @@
           >
             Close
           </button>
-          <button type="submit" class="btn btn-primary">Prescribe</button>
+          <button [disabled]="prescriptionForm.invalid" type="submit" class="btn btn-primary">Prescribe</button>
         </div>
       </form>
     </div>

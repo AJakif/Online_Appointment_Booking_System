@@ -5,17 +5,19 @@
     
     <div class="row">
         <div class="col-md-4">
-            <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
                 <div class="form-group mb-3">
                     <label  class="control-label">Email</label><span style="color:red">*</span>
-                    <input ngModel name="email" placeholder="Enter your Email" class="form-control" />
+                    <input formControlName="email" placeholder="Enter your Email" class="form-control" />
+                    <small *ngIf="email && email.invalid &&  email.touched"class="text-danger">Email Is required</small>
                 </div>
                 <div class="form-group mb-3">
                     <label  class="control-label">Password</label><span style="color:red">*</span>
-                    <input ngModel name="password" placeholder="Enter your Password"  type="password" class="form-control" />
+                    <input formControlName="password" required placeholder="Enter your Password"  type="password" class="form-control" />
+                    <small *ngIf="password && password.invalid && password.touched" class="text-danger">Passwords must be at least 8 characters and contain at least 3 of 4 of the following: upper case (A-Z), lower case (a-z), number (0-9) and special character (e.g. !@#$%^&*)</small>
                 </div>
                 <div class="form-group mb-2">
-                    <input type="submit" value="login" class="btn btn-primary" />
+                    <input [disabled]="loginForm.invalid" type="submit" value="login" class="btn btn-primary" />
                 </div>
             </form>
         </div>

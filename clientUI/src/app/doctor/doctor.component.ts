@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DoctorApiService } from '../_services/doctor-api.service';
 
 @Component({
@@ -21,12 +21,18 @@ export class DoctorComponent implements OnInit {
 
   prescriptionForm = new FormGroup({
     appointmentId : new FormControl(),
-    diesis: new FormControl(),
-    prescription: new FormControl(),
+    diesis: new FormControl('',Validators.required),
+    prescription: new FormControl('',Validators.required),
   });
 
   ngOnInit(): void {
     this.approvedAppointments();
+  }
+  get Diesis(){
+    return this.prescriptionForm.get('diesis');
+  }
+  get Prescription(){
+    return this.prescriptionForm.get('prescription');
   }
 
   public approvedAppointments(){
@@ -86,8 +92,8 @@ export class DoctorComponent implements OnInit {
   public appointId(id:string){
     this. prescriptionForm = new FormGroup({
       appointmentId : new FormControl(id),
-      diesis: new FormControl(),
-      prescription: new FormControl(),
+      diesis: new FormControl('',Validators.required),
+      prescription: new FormControl('',Validators.required),
     });
   }
 
@@ -109,5 +115,7 @@ export class DoctorComponent implements OnInit {
       }
     );
   }
+
+  
 
 }

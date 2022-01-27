@@ -32,7 +32,7 @@ export class UserAuthService {
   }
 
   public getToken():string{
-    return JSON.stringify(localStorage.getItem('jwt') || '{}');
+    return JSON.stringify(localStorage.getItem('jwt') || null);
   }
 
   public clear(){

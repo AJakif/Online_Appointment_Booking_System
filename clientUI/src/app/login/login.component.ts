@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserAuthService } from '../_services/user-auth.service';
 import { UserService } from '../_services/user.service';
@@ -11,6 +11,11 @@ import { UserService } from '../_services/user.service';
 })
 export class LoginComponent implements OnInit {
 
+  loginForm = new FormGroup({
+    email : new FormControl('',[Validators.required, Validators.email]),
+     password: new FormControl('',[Validators.required,Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[A-Za-z\d$@$!%*?&].{8,}')])
+   });
+
   constructor(
     private userService: UserService,
     private userAuthService:UserAuthService,
@@ -21,9 +26,17 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login(loginForm : NgForm){
+  get email() {
+    return this.loginForm.get('email');
+  }
+  get password() {
+    console.log(this.loginForm.get('password'))
+    return this.loginForm.get('password');
+  }
 
-    this.userService.login(loginForm.value).subscribe(
+  login(){
+
+    this.userService.login(this.loginForm.value).subscribe(
       (response:any)=>{
         this.userAuthService.setRole(response.userDetails.type);
         this.userAuthService.setToken(response.token);

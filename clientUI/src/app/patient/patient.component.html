@@ -50,7 +50,8 @@
               {{ appoint.appointmentStatus }}
             </td>
 
-            <td *ngIf="appoint.isPaid === 0" class="text-center">
+            <td *ngIf="appoint.appointmentStatus === 'Approved' && appoint.isPaid === 0 &&
+            appoint.isPrescribed === 0" class="text-center">
               <div class="text-center">
                 <a
                   class="btn btn-success text-white edit"

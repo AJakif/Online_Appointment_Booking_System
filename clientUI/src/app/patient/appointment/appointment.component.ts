@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PatientApiService } from 'src/app/_services/patient-api.service';
 import { UserAuthService } from 'src/app/_services/user-auth.service';
@@ -12,6 +12,14 @@ import { UserService } from 'src/app/_services/user.service';
 })
 export class AppointmentComponent implements OnInit {
 
+  appointmentForm = new FormGroup({
+    specialization : new FormControl('',Validators.required),
+    doctorId: new FormControl('',Validators.required),
+    appointmentDate: new FormControl('',Validators.required),
+    appointmentTime: new FormControl('',Validators.required),
+    symptom: new FormControl(''),
+    medication: new FormControl('')
+  });
   @ViewChild('specialization') spec!: ElementRef;
   specializations:any;
   doctors:any;
@@ -33,6 +41,19 @@ export class AppointmentComponent implements OnInit {
     );
   }
 
+  get specialization(){
+    return this.appointmentForm.get('specialization');
+  }
+  get doctorId(){
+    return this.appointmentForm.get('doctorId');
+  }
+  get appointmentDate(){
+    return this.appointmentForm.get('appointmentDate');
+  }
+  get appointmentTime(){
+    return this.appointmentForm.get('appointmentTime');
+  }
+
  public HandleChange(val:any){
     this.patientService.doctor(val).subscribe(
       (response:any)=>{
@@ -45,9 +66,9 @@ export class AppointmentComponent implements OnInit {
 
   }
 
-  appointment(appointmentForm : NgForm){
+  appointment(){
 
-    this.patientService.appointment(appointmentForm.value).subscribe(
+    this.patientService.appointment(this.appointmentForm.value).subscribe(
       (response:any)=>{
         console.log(response);
           this.router.navigate(['/patient/dashboard'])

@@ -6,7 +6,7 @@
       <app-small-card
         [background]="'success'"
         [info]="true"
-        [count]="12"
+        [count]="patientCount"
         [mainicon]="'fas fa-user-plus'"
         [link]="'/admin/getAllPatient'"
         [title]="'Total Patient'"
@@ -16,7 +16,7 @@
       <app-small-card
         [background]="'primary'"
         [info]="true"
-        [count]="10"
+        [count]="DoctorCount"
         [mainicon]="'fas fa-user-md'"
         [link]="'/admin/getAllDoctor'"
         [title]="'Total Doctors'"
@@ -26,7 +26,7 @@
       <app-small-card
         [background]="'danger'"
         [info]="true"
-        [count]="3"
+        [count]="specialCount"
         [mainicon]="'fas fa-users'"
         [link]="'/admin/getAllSpecialization'"
         [title]="'Total Specialization'"
@@ -36,7 +36,7 @@
       <app-small-card
         [background]="'warning'"
         [info]="false"
-        [count]="100"
+        [count]="balance"
         [mainicon]="'fas fa-wallet'"
         [symbol]="'$'"
         [title]="'Company Balance'"

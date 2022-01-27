@@ -3,23 +3,24 @@
   <hr />
   <div class="row">
     <div class="col-md-12">
-      <form #regForm="ngForm" (ngSubmit)="resigration(regForm)">
+      <form [formGroup]="regForm"  (ngSubmit)="resigration()">
         <div class="row mb-3">
           <div class="form-group col-md-6">
             <label class="control-label">Name</label
             ><span style="color: red">*</span>
-            <input ngModel name="name" class="form-control" />
+            <input formControlName="name" class="form-control" />
+            <small *ngIf="name && name.invalid &&  name.touched"class="text-danger">Name Is required & only characters</small>
           </div>
           <div class="form-group col-md-6">
             <label class="control-label">Address</label>
-            <input ngModel name="address" class="form-control" />
+            <input formControlName="address" class="form-control" />
           </div>
         </div>
 
         <div class="row mb-3">
           <div class="form-group col-md-4">
             <label class="control-label">Gender</label>
-            <select ngModel name="gender" class="form-control" name="Gender">
+            <select formControlName="gender" class="form-control" name="Gender">
               <option></option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
@@ -28,29 +29,33 @@
           <div class="form-group col-md-4">
             <label class="control-label">Date of birth</label
             ><span style="color: red">*</span>
-            <input ngModel name="dob" type="date" class="form-control" />
+            <input formControlName="dob" type="date" class="form-control" />
+            <small *ngIf="dob && dob.invalid &&  dob.touched"class="text-danger">Date of birth Is required</small>
           </div>
           <div class="form-group col-md-4">
             <label class="control-label">Phone</label
             ><span style="color: red">*</span>
-            <input ngModel name="phone" class="form-control" />
+            <input formControlName="phone" class="form-control" />
+            <small *ngIf="phone && phone.invalid &&  phone.touched"class="text-danger">Phone Is required & 12 digit number</small>
           </div>
         </div>
         <div class="row mb-3">
           <div class="form-group col-md-6">
             <label class="control-label">Email</label
             ><span style="color: red">*</span>
-            <input ngModel name="email" class="form-control" />
+            <input formControlName="email" class="form-control" />
+            <small *ngIf="email && email.invalid &&  email.touched"class="text-danger">Email Is required</small>
           </div>
           <div class="form-group col-md-6">
             <label class="control-label">Password</label
             ><span style="color: red">*</span>
-            <input ngModel name="password" type="password" class="form-control" />
+            <input formControlName="password" type="password" class="form-control" />
+            <small *ngIf="password && password.invalid && password.touched" class="text-danger">Passwords must be at least 8 characters and contain at least 3 of 4 of the following: upper case (A-Z), lower case (a-z), number (0-9) and special character (e.g. !@#$%^&*)</small>
           </div>
         </div>
 
         <div class="form-group mb-2">
-          <input type="submit" value="Register" class="btn btn-primary" />
+          <input [disabled]="regForm.invalid" type="submit" value="Register" class="btn btn-primary" />
         </div>
       </form>
     </div>

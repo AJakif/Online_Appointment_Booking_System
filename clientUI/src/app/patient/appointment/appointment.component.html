@@ -3,44 +3,48 @@
 <hr />
 <div class="row">
     <div class="col-12">
-        <form #appointmentForm="ngForm" (ngSubmit)="appointment(appointmentForm)">
+        <form [formGroup]="appointmentForm" (ngSubmit)="appointment()">
             <div class="row mb-2">
                 <div class="form-group col-md-6">
-                    <label class="control-label">Specialization</label>
-                    <select class="form-control form-select" id="specialization" name="specialization" [(ngModel)]="selected" (ngModelChange)="HandleChange($event)">
+                    <label class="control-label">Specialization</label><span style="color: red">*</span>
+                    <select class="form-control form-select" id="specialization" formControlName="specialization" [(ngModel)]="selected" (ngModelChange)="HandleChange($event)">
                         <option *ngFor="let spec of specializations" value="{{spec.oId}}">{{spec.specialiaztion}}</option>
                     </select>
+                    <small *ngIf="specialization && specialization.invalid &&  specialization.touched"class="text-danger">specialization Is required</small>
                 </div>
                 <div class="form-group col-md-6">
-                    <label  class="control-label">Doctor</label>
-                    <select ngModel name="doctorId" class="form-control form-select" id="doctor" >
+                    <label  class="control-label">Doctor</label><span style="color: red">*</span>
+                    <select formControlName="doctorId" class="form-control form-select" id="doctor" >
                         <option *ngFor="let doc of doctors" value="{{doc.drId}}">{{doc.name}}</option>
                     </select>
+                    <small *ngIf="doctorId && doctorId.invalid &&  doctorId.touched"class="text-danger">doctor Is required</small>
                 </div>
             </div>
             <div class="row mb-2">
                 <div class="form-group col-md-6">
-                    <label  class="control-label">Appointment Date</label>
-                    <input type="date" ngModel name="appointmentDate" class="form-control" />
+                    <label  class="control-label">Appointment Date</label><span style="color: red">*</span>
+                    <input type="date" formControlName="appointmentDate" class="form-control" />
+                    <small *ngIf="appointmentDate && appointmentDate.invalid &&  appointmentDate.touched"class="text-danger">Appointment Date Is required</small>
                 </div>
                 <div class="form-group col-md-6">
-                    <label class="control-label">Appoinment Time</label>
-                    <input type="time" ngModel name="appointmentTime" class="form-control" />
+                    <label class="control-label">Appoinment Time</label><span style="color: red">*</span>
+                    <input type="time" formControlName="appointmentTime" class="form-control" />
+                    <small *ngIf="appointmentTime && appointmentTime.invalid &&  appointmentTime.touched"class="text-danger">Appointment Time Is required</small>
                 </div>
             </div>
             <div class="row mb-2">
                 <div class="form-group col-md-6">
                     <label  class="control-label">Symptom</label>
-                    <textarea  ngModel name="symptom" class="form-control" rows="3"></textarea>
+                    <textarea  formControlName="symptom" class="form-control" rows="3"></textarea>
                 </div>
                 <div class="form-group col-md-6">
                     <label  class="control-label">Medication</label>
-                    <textarea ngModel name="medication" class="form-control" rows="3"></textarea>
+                    <textarea formControlName="medication" class="form-control" rows="3"></textarea>
                 </div>
             </div>
 
             <div class="form-group">
-                <input type="submit" value="Submit" class="btn btn-primary" />
+                <input [disabled]="appointmentForm.invalid" type="submit" value="Submit" class="btn btn-primary" />
             </div>
         </form>
     </div>

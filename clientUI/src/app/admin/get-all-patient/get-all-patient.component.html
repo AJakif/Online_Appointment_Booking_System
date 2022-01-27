@@ -28,7 +28,33 @@
             <th class="th-sm text-center">Action</th>
           </tr>
         </thead>
-        <tbody id="tableData"></tbody>
+        <tbody id="tableData" *ngFor="let patient of patients">
+          <tr>
+            <td class="text-center">{{patient.name}}</td>
+            <td class="text-center">{{patient.phone}}</td>
+            <td class="text-center">{{patient.address}}</td>
+            <td class="text-center">{{patient.dob}}</td>
+            <td class="text-center">
+              <div class="text-center">
+                <a
+                  class="btn btn-success text-white edit me-1"
+                  style="cursor: pointer; width: 60px"
+                  data-toggle="modal"
+                  data-target="#EditRecord"
+                  data-id="@trans.OId"
+                >
+                  <i class="far fa-edit"></i>
+                </a>
+                <a
+                  class="btn btn-danger text-white"
+                  style="cursor: pointer; width: 60px"
+                >
+                  <i class="far fa-trash-alt"></i>
+                </a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>
