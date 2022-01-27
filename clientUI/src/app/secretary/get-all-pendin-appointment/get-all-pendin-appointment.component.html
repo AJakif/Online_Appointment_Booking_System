@@ -21,10 +21,10 @@
           </tr>
         </thead>
         <tbody *ngFor="let appoint of appointment" id="tableData">
-          <tr *ngIf="!appointment">
-            <td colspan="5" style="text-align: center">No data</td>
+          <tr *ngIf="appoint.length === 0">
+            <td colspan="7" style="text-align: center">No data</td>
           </tr>
-          <tr >
+          <tr *ngIf="appoint.length !== 0" >
             <td class="text-center">{{ appoint.appointmentId }}</td>
             <td class="text-center">{{ appoint.patientName }}</td>
             <td class="text-center">{{ appoint.doctorName }}</td>
@@ -35,8 +35,9 @@
             <td class="text-center">
               <div class="text-center">
                 <a
-                  class="btn btn-success text-white edit"
-                  style="cursor: pointer; width: 60px"
+                  class="btn btn-success text-white edit me-1"
+                  style="cursor: pointer; width: 50px"
+                  (click)="approve(appoint.appointmentId)"
                 >
                   <i
                     data-toggle="tooltip"
@@ -47,7 +48,8 @@
                 </a>
                 <a
                   class="btn btn-danger text-white"
-                  style="cursor: pointer; width: 60px"
+                  style="cursor: pointer; width: 50px"
+                  (click)="decline(appoint.appointmentId)"
                 >
                   <i
                     data-toggle="tooltip"

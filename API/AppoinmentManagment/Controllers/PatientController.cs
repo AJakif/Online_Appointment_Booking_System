@@ -66,11 +66,7 @@ namespace AppoinmentManagment.Controllers
                     int uresult = _appointment.UpdateAppointmentPayment(appointId, name);
                     if(uresult>0)
                     {
-                        ListAppoinmentBO labo = new ListAppoinmentBO()
-                        {
-                            AppointmentList = _appointment.GetApprovedAppointmentPatientId(userId)
-                        };
-                        return Ok(labo);
+                        return Ok(new { message = "Successful!" });
                     }
                 }
                 else

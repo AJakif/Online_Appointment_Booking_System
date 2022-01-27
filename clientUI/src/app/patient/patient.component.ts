@@ -1,6 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormControl, FormGroup } from '@angular/forms';
 import { PatientApiService } from '../_services/patient-api.service';
 
 @Component({
@@ -10,21 +9,31 @@ import { PatientApiService } from '../_services/patient-api.service';
 })
 export class PatientComponent implements OnInit {
 
-  appId!:string;
-  amount!: number;
-  appointment:any = null;
+  @ViewChild('myModalClose') modalClose!:ElementRef;
+  appointmentId!:string;
+  doctorName!: string;
+  symptom!:string;
+  medication!:string;
+  diesis!:string;
+  prescription!:string;
+
+  appointment:any;
   constructor(
-    private patientService : PatientApiService,
-    private router : Router
+    private patientService : PatientApiService
   ) { }
 
   paymentForm = new FormGroup({
-    appointmentId : new FormControl(this.appId),
-    amount: new FormControl(this.amount)
+    appointmentId : new FormControl(),
+    amount: new FormControl()
   });
 
   ngOnInit(): void {
 
+    this.showAppointments();
+  }
+
+  public showAppointments()
+  {
     this.patientService.appointments().subscribe(
       (response:any)=>{
         console.log(response.appointmentList)
@@ -34,16 +43,16 @@ export class PatientComponent implements OnInit {
         console.log(error);
       }
     );
+    
   }
 
   public pay( ) {
     console.log(this.paymentForm.value);
-    // this.modal.hide();
-    
     this.patientService.payment(this.paymentForm.value).subscribe(
       (response:any)=>{
         console.log(response.message);
-        this.router.navigate(['/patient/dashboard'])
+        this.modalClose.nativeElement.click();
+        this.showAppointments();
       },
       (error)=>{
         console.log(error);
@@ -53,16 +62,31 @@ export class PatientComponent implements OnInit {
 
   public getAppData(id:string)
   {
-    console.log(id);
     this.patientService.appointmentAmount(id).subscribe(
       (response:any)=>{
         console.log(response);
-        this.appId = response.appointment;
-          this.amount = response.fee;
          this.paymentForm = new FormGroup({
-            appointmentId : new FormControl(this.appId),
-            amount: new FormControl(this.amount)
+            appointmentId : new FormControl(response.appointment),
+            amount: new FormControl(response.fee)
           });
+      },
+      (error)=>{
+        console.log(error);
+      }
+    );
+  }
+
+  public Details(id:string){
+    this.patientService.appointmentDetails(id).subscribe(
+      (response:any)=>{
+        console.log(response);
+        this.appointmentId = response.data.appointmentId;
+        this.doctorName = response.data.doctorName;
+        this.symptom = response.data.symptom;
+        this.medication =response.data.medication;
+        this.diesis = response.data.diesis;
+        this.prescription = response.data.prescription;
+         
       },
       (error)=>{
         console.log(error);

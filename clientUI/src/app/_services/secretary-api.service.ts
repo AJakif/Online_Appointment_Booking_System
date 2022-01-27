@@ -20,4 +20,20 @@ export class SecretaryApiService {
    public pendingAppointments(){
     return this.httpclient.get(this.PATH_OF_API + "/secretary/pendingAppointments", {headers:this.requestHeader});
   }
+
+  public approvedAppointments(){
+    return this.httpclient.get(this.PATH_OF_API + "/secretary/approvedAppointments", {headers:this.requestHeader});
+  }
+
+  public pendingAppointmentCounts(){
+    return this.httpclient.get(this.PATH_OF_API + "/secretary/CountPendingAppointment", {headers:this.requestHeader});
+  }
+
+  public approveAppointment(id:string){
+    return this.httpclient.post(this.PATH_OF_API + `/secretary/appointment/Approve/${id}`, {headers:this.requestHeader});
+  }
+
+  public declineAppointment(id:string){
+    return this.httpclient.post(this.PATH_OF_API + `/secretary/appointment/Decline/${id}`, {headers:this.requestHeader});
+  }
 }

@@ -32,10 +32,10 @@
           </tr>
         </thead>
         <tbody *ngFor="let appoint of appointment" id="tableData">
-          <tr *ngIf="!appointment">
+          <tr *ngIf="appoint.length === 0">
             <td colspan="6" style="text-align: center">No data</td>
           </tr>
-          <tr *ngIf="appointment">
+          <tr *ngIf="appoint.length !== 0">
             <td class="text-center">{{ appoint.appointmentId }}</td>
             <td class="text-center">{{ appoint.doctorName }}</td>
             <td class="text-center">{{ appoint.appointmentDate }}</td>
@@ -72,7 +72,7 @@
               *ngIf="
                 appoint.isPaid === 1 &&
                 appoint.isPrescribed === 0 &&
-                appoint.isVisited === 1
+                appoint.isVisited === 0
               "
               class="text-center"
             >
@@ -90,6 +90,9 @@
                 <a
                   class="btn btn-primary text-white"
                   style="cursor: pointer; width: 60px"
+                  data-bs-toggle="modal"
+                  data-bs-target="#appDetails"
+                  (click)="Details(appoint.appointmentId)"
                 >
                   <i
                     data-toggle="tooltip"
@@ -97,7 +100,6 @@
                     title="Prescription"
                     class="fas fa-notes-medical"
                   ></i>
-                  <!-- onclick=Details("/appointment/details/@appoint.AppointmentId") -->
                 </a>
               </div>
             </td>
@@ -108,6 +110,49 @@
   </div>
 </div>
 
+
+<!-- ++++++++++++++++++++++++ -->
+<div
+  class="modal fade"
+  id="appDetails"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-primary" id="exampleModalLabel">
+          Appointment Details
+        </h5>
+      </div>
+     
+        <div class="modal-body">
+          <div class="container">
+            <div class="text-left">
+              <p><b>Appoinment ID:</b> {{appointmentId}}</p>
+              <p><b>Doctor Name:</b> {{doctorName}} </p>
+              <p><b>Symptom:</b> {{symptom}} </p>
+              <p><b>Medication:</b> {{medication}} </p>
+              <p><b>Desis:</b> {{diesis}} </p>
+              <p><b>Prescription :</b> {{prescription}} </p>
+             </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- ++++++++++++++++++++++++ -->
 <div
   class="modal fade"
   id="EditRecord"
@@ -115,7 +160,7 @@
   aria-labelledby="exampleModalLabel"
   aria-hidden="true"
 >
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title text-primary" id="exampleModalLabel">
@@ -142,6 +187,7 @@
             type="button"
             class="btn btn-secondary"
             data-bs-dismiss="modal"
+            #myModalClose
           >
             Close
           </button>
@@ -151,3 +197,4 @@
     </div>
   </div>
 </div>
+

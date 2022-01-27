@@ -44,4 +44,8 @@ export class PatientApiService {
   public payment(paymentData:any){
     return this.httpclient.post(this.PATH_OF_API + "/patient/payment", paymentData , {headers:this.requestHeader});
   }
+
+  public appointmentDetails(id:string){
+    return this.httpclient.get(this.PATH_OF_API + `/patient/appointment/details/${id}`, {headers:this.requestHeader});
+  }
 }

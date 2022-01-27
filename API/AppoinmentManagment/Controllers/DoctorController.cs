@@ -40,11 +40,11 @@ namespace AppoinmentManagment.Controllers
 
         [HttpPost]
         [Route("api/doctor/givePrescription")]
-        public IActionResult Prescription([FromBody] ListAppoinmentBO labo)
+        public IActionResult Prescription([FromBody] PrescriptionBO labo)
         {
-            string prescription = labo.Appointment.Prescription;
-            string appointmentId = labo.Appointment.AppointmentId;
-            string desis = labo.Appointment.Diesis;
+            string prescription = labo.Prescription;
+            string appointmentId = labo.AppointmentId;
+            string desis = labo.Diesis;
             (_, string name) = HttpContext.GetUserInfo();
             int result = _appointment.Prescribe(appointmentId, prescription, desis, name);
             if (result > 0)
@@ -58,7 +58,7 @@ namespace AppoinmentManagment.Controllers
         }
 
         [HttpGet]
-        [Route("/appointment/visit/{id}")]
+        [Route("api/doctor/appointment/visit/{id}")]
         public IActionResult Visit(string id)
         {
             try
@@ -81,7 +81,7 @@ namespace AppoinmentManagment.Controllers
         }
 
         [HttpGet]
-        [Route("/appointment/patient/{id}")]
+        [Route("api/doctor/appointment/patient/{id}")]
         public IActionResult Patient(string id)
         {
             AppoinmentBO abo = _appointment.GetAppoinmentById(id);
