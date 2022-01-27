@@ -55,9 +55,9 @@
                 <a
                   class="btn btn-success text-white edit"
                   style="cursor: pointer; width: 60px"
-                  data-toggle="modal"
-                  data-target="#EditRecord"
-                  data-id="@appoint.AppointmentId"
+                  data-bs-toggle="modal"
+                  data-bs-target="#EditRecord"
+                  (click)="getAppData(appoint.appointmentId)"
                 >
                   <i
                     data-toggle="tooltip"
@@ -104,6 +104,50 @@
           </tr>
         </tbody>
       </table>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="EditRecord"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-primary" id="exampleModalLabel">
+          Appointment Payment
+        </h5>
+      </div>
+      <form [formGroup]="paymentForm" (ngSubmit)="pay()">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="control-label">Appointment Id</label>
+            <input
+              formControlName="appointmentId"
+              class="form-control"
+              readonly
+            />
+          </div>
+          <div class="form-group">
+            <label class="control-label">Amount</label>
+            <input formControlName="amount" class="form-control" readonly />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button type="submit" class="btn btn-primary">Pay</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

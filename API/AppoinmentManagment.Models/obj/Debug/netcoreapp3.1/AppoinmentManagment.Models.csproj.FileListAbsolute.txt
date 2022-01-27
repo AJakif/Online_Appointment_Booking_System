@@ -18,3 +18,13 @@ D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.Model
 D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.Models\obj\Debug\netcoreapp3.1\AppoinmentManagment.Models.csproj.CoreCompileInputs.cache
 D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.Models\obj\Debug\netcoreapp3.1\AppoinmentManagment.Models.dll
 D:\Projects\SECL_Test\pre-test-jan\AppoinmentManagment\AppoinmentManagment.Models\obj\Debug\netcoreapp3.1\AppoinmentManagment.Models.pdb
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.Models\bin\Debug\netcoreapp3.1\AppoinmentManagment.Models.deps.json
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.Models\bin\Debug\netcoreapp3.1\AppoinmentManagment.Models.dll
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.Models\bin\Debug\netcoreapp3.1\AppoinmentManagment.Models.pdb
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.Models\obj\Debug\netcoreapp3.1\AppoinmentManagment.Models.csproj.AssemblyReference.cache
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.Models\obj\Debug\netcoreapp3.1\AppoinmentManagment.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.Models\obj\Debug\netcoreapp3.1\AppoinmentManagment.Models.AssemblyInfoInputs.cache
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.Models\obj\Debug\netcoreapp3.1\AppoinmentManagment.Models.AssemblyInfo.cs
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.Models\obj\Debug\netcoreapp3.1\AppoinmentManagment.Models.csproj.CoreCompileInputs.cache
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.Models\obj\Debug\netcoreapp3.1\AppoinmentManagment.Models.dll
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.Models\obj\Debug\netcoreapp3.1\AppoinmentManagment.Models.pdb

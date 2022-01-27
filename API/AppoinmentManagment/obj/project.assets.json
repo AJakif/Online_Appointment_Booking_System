@@ -7356,11 +7356,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment\\AppoinmentManagment.csproj",
+      "projectUniqueName": "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment\\AppoinmentManagment.csproj",
       "projectName": "AppoinmentManagment",
-      "projectPath": "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment\\AppoinmentManagment.csproj",
+      "projectPath": "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment\\AppoinmentManagment.csproj",
       "packagesPath": "C:\\Users\\jahin.akif\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment\\obj\\",
+      "outputPath": "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jahin.akif\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7377,11 +7377,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.BusinessLayer\\AppoinmentManagment.BusinessLayer.csproj": {
-              "projectPath": "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.BusinessLayer\\AppoinmentManagment.BusinessLayer.csproj"
+            "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.BusinessLayer\\AppoinmentManagment.BusinessLayer.csproj": {
+              "projectPath": "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.BusinessLayer\\AppoinmentManagment.BusinessLayer.csproj"
             },
-            "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.DataAccessLayer\\AppoinmentManagment.DataAccessLayer.csproj": {
-              "projectPath": "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.DataAccessLayer\\AppoinmentManagment.DataAccessLayer.csproj"
+            "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.DataAccessLayer\\AppoinmentManagment.DataAccessLayer.csproj": {
+              "projectPath": "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.DataAccessLayer\\AppoinmentManagment.DataAccessLayer.csproj"
             }
           }
         }

@@ -90,11 +90,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.Models\\AppoinmentManagment.Models.csproj",
+      "projectUniqueName": "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.Models\\AppoinmentManagment.Models.csproj",
       "projectName": "AppoinmentManagment.Models",
-      "projectPath": "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.Models\\AppoinmentManagment.Models.csproj",
+      "projectPath": "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.Models\\AppoinmentManagment.Models.csproj",
       "packagesPath": "C:\\Users\\jahin.akif\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.Models\\obj\\",
+      "outputPath": "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.Models\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jahin.akif\\AppData\\Roaming\\NuGet\\NuGet.Config",

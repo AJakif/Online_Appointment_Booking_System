@@ -51,18 +51,18 @@ namespace AppoinmentManagment.Controllers
 
         [HttpPost]
         [Route("api/patient/payment")]
-        public IActionResult Pay([FromBody] ListAppoinmentBO listabo)
+        public IActionResult Pay([FromBody] PaymentBO paybo)
         {
             try
             {
                 var date = DateTime.Now;
                 string transactionId = "trans" + date.ToString("yyyyMMdd-HHmmssfff");
                 (int userId, string name) = HttpContext.GetUserInfo();
-                string DrId = _appointment.GetAppointedDoctorId(listabo.Appointment.AppointmentId);
-                int result = _payment.AddTransaction(listabo, transactionId, userId,DrId,name);
+                string DrId = _appointment.GetAppointedDoctorId(paybo.AppointmentId);
+                int result = _payment.AddTransaction(paybo, transactionId, userId,DrId,name);
                 if(result>0)
                 {
-                    string appointId = listabo.Appointment.AppointmentId;
+                    string appointId = paybo.AppointmentId;
                     int uresult = _appointment.UpdateAppointmentPayment(appointId, name);
                     if(uresult>0)
                     {
@@ -134,7 +134,7 @@ namespace AppoinmentManagment.Controllers
         }
 
         [HttpPost]
-        [Route("api/patient/doctorFee")]
+        [Route("api/patient/doctorFee/{id}")]
         public IActionResult Payment(string id)
         {
             decimal fees = _payment.GetDoctorFeesById(id);

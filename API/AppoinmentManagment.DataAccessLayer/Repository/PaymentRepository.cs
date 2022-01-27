@@ -22,10 +22,10 @@ namespace AppoinmentManagment.DataAccessLayer.Repository
             _appoint = appoint;
         }
 
-        public int AddTransaction(ListAppoinmentBO listabo, string trasid, int userid, string drid,string name)
+        public int AddTransaction(PaymentBO paybo, string trasid, int userid, string drid,string name)
         {
             string Query = "INSERT INTO [dbo].[Transaction]([TransId],[PatientId],[DoctorId],[AppointmentId],[Amount],[Created_at],[Created_by])" +
-                $"VALUES('{trasid}','{userid}','{drid}','{listabo.Appointment.AppointmentId}','{listabo.Transaction.Amount}',GetDate(),'{name}')";
+                $"VALUES('{trasid}','{userid}','{drid}','{paybo.AppointmentId}','{paybo.Amount}',GetDate(),'{name}')";
             
             int Result;
             string connectionString = _config["ConnectionStrings:DefaultConnection"];

@@ -8,6 +8,6 @@ namespace AppoinmentManagment.DataAccessLayer.IRepository
     public interface IPaymentRepository
     {
         decimal GetDoctorFeesById(string id);
-        int AddTransaction(ListAppoinmentBO listabo,string trasid, int userid, string drid,string name);
+        int AddTransaction(PaymentBO paybo,string trasid, int userid, string drid,string name);
     }
 }

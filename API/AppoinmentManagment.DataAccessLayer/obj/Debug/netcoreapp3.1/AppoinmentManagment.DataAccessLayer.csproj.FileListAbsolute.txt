@@ -43,3 +43,18 @@ D:\Projects\Online Appointment Booking System\API\AppoinmentManagment.DataAccess
 D:\Projects\Online Appointment Booking System\API\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.csproj.CopyComplete
 D:\Projects\Online Appointment Booking System\API\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.dll
 D:\Projects\Online Appointment Booking System\API\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.pdb
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.deps.json
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.dll
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.pdb
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.BusinessLayer.dll
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.Models.dll
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.BusinessLayer.pdb
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.DataAccessLayer\bin\Debug\netcoreapp3.1\AppoinmentManagment.Models.pdb
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.csproj.AssemblyReference.cache
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.AssemblyInfoInputs.cache
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.AssemblyInfo.cs
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.csproj.CoreCompileInputs.cache
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.csproj.CopyComplete
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.dll
+D:\Projects\Online_Appointment_Booking_System\API\AppoinmentManagment.DataAccessLayer\obj\Debug\netcoreapp3.1\AppoinmentManagment.DataAccessLayer.pdb

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.DataAccessLayer\\AppoinmentManagment.DataAccessLayer.csproj": {}
+    "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.DataAccessLayer\\AppoinmentManagment.DataAccessLayer.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.BusinessLayer\\AppoinmentManagment.BusinessLayer.csproj": {
+    "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.BusinessLayer\\AppoinmentManagment.BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.BusinessLayer\\AppoinmentManagment.BusinessLayer.csproj",
+        "projectUniqueName": "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.BusinessLayer\\AppoinmentManagment.BusinessLayer.csproj",
         "projectName": "AppoinmentManagment.BusinessLayer",
-        "projectPath": "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.BusinessLayer\\AppoinmentManagment.BusinessLayer.csproj",
+        "projectPath": "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.BusinessLayer\\AppoinmentManagment.BusinessLayer.csproj",
         "packagesPath": "C:\\Users\\jahin.akif\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.BusinessLayer\\obj\\",
+        "outputPath": "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jahin.akif\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.Models\\AppoinmentManagment.Models.csproj": {
-                "projectPath": "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.Models\\AppoinmentManagment.Models.csproj"
+              "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.Models\\AppoinmentManagment.Models.csproj": {
+                "projectPath": "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.Models\\AppoinmentManagment.Models.csproj"
               }
             }
           }
@@ -72,14 +72,14 @@
         }
       }
     },
-    "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.DataAccessLayer\\AppoinmentManagment.DataAccessLayer.csproj": {
+    "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.DataAccessLayer\\AppoinmentManagment.DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.DataAccessLayer\\AppoinmentManagment.DataAccessLayer.csproj",
+        "projectUniqueName": "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.DataAccessLayer\\AppoinmentManagment.DataAccessLayer.csproj",
         "projectName": "AppoinmentManagment.DataAccessLayer",
-        "projectPath": "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.DataAccessLayer\\AppoinmentManagment.DataAccessLayer.csproj",
+        "projectPath": "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.DataAccessLayer\\AppoinmentManagment.DataAccessLayer.csproj",
         "packagesPath": "C:\\Users\\jahin.akif\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.DataAccessLayer\\obj\\",
+        "outputPath": "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jahin.akif\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -96,11 +96,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.BusinessLayer\\AppoinmentManagment.BusinessLayer.csproj": {
-                "projectPath": "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.BusinessLayer\\AppoinmentManagment.BusinessLayer.csproj"
+              "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.BusinessLayer\\AppoinmentManagment.BusinessLayer.csproj": {
+                "projectPath": "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.BusinessLayer\\AppoinmentManagment.BusinessLayer.csproj"
               },
-              "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.Models\\AppoinmentManagment.Models.csproj": {
-                "projectPath": "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.Models\\AppoinmentManagment.Models.csproj"
+              "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.Models\\AppoinmentManagment.Models.csproj": {
+                "projectPath": "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.Models\\AppoinmentManagment.Models.csproj"
               }
             }
           }
@@ -155,14 +155,14 @@
         }
       }
     },
-    "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.Models\\AppoinmentManagment.Models.csproj": {
+    "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.Models\\AppoinmentManagment.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.Models\\AppoinmentManagment.Models.csproj",
+        "projectUniqueName": "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.Models\\AppoinmentManagment.Models.csproj",
         "projectName": "AppoinmentManagment.Models",
-        "projectPath": "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.Models\\AppoinmentManagment.Models.csproj",
+        "projectPath": "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.Models\\AppoinmentManagment.Models.csproj",
         "packagesPath": "C:\\Users\\jahin.akif\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Online Appointment Booking System\\API\\AppoinmentManagment.Models\\obj\\",
+        "outputPath": "D:\\Projects\\Online_Appointment_Booking_System\\API\\AppoinmentManagment.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jahin.akif\\AppData\\Roaming\\NuGet\\NuGet.Config",
