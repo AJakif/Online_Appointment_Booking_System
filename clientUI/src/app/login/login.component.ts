@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
     return this.loginForm.get('email');
   }
   get password() {
-    console.log(this.loginForm.get('password'))
     return this.loginForm.get('password');
   }
 

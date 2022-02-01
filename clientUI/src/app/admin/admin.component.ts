@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as Highcharts from 'highcharts';
 import { AdminApiService } from '../_services/admin-api.service';
 
 @Component({
@@ -12,6 +13,7 @@ export class AdminComponent implements OnInit {
   DoctorCount!:number;
   specialCount!:number;
   balance!:number;
+  series!:any;
 
   constructor(private adminService : AdminApiService) { }
 
@@ -22,8 +24,6 @@ export class AdminComponent implements OnInit {
     this.showBalance();
 
   }
-
-
   public showPatientCounts()
   {
     this.adminService.patients().subscribe(
@@ -64,7 +64,6 @@ export class AdminComponent implements OnInit {
   {
     this.adminService.balance().subscribe(
       (response:any)=>{
-        console.log(response)
         this.balance = response.balance
       },
       (error)=>{
