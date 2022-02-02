@@ -14,7 +14,7 @@ import { RouteButtonComponent } from './components/route-button/route-button.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-
+import { HighchartsChartComponent, HighchartsChartModule } from 'highcharts-angular';
 console.warn("admin module")
 @NgModule({
   declarations: [
@@ -27,6 +27,7 @@ console.warn("admin module")
     GetAllSpecializationComponent,
     SmallCardComponent,
     RouteButtonComponent
+    
   ],
   imports: [
     CommonModule,
@@ -34,7 +35,8 @@ console.warn("admin module")
     FormsModule,
     HttpClientModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HighchartsChartModule
   ]
 })
 export class AdminModule { }
