@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminApiService } from 'src/app/_services/admin-api.service';
+import { AdminApiService } from '../_services/admin-api.service';
 
 @Component({
   selector: 'app-get-all-patient',

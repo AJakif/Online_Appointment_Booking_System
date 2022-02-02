@@ -1,9 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { PatientApiService } from 'src/app/_services/patient-api.service';
-import { UserAuthService } from 'src/app/_services/user-auth.service';
-import { UserService } from 'src/app/_services/user.service';
+import { PatientApiService } from '../_services/patient-api.service';
 
 @Component({
   selector: 'app-appointment',

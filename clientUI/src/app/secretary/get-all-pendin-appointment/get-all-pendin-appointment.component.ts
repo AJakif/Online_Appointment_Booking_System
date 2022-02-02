@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SecretaryApiService } from 'src/app/_services/secretary-api.service';
+import { SecretaryApiService } from '../_services/secretary-api.service';
 
 @Component({
   selector: 'app-get-all-pendin-appointment',

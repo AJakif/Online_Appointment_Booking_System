@@ -1,0 +1,15 @@
+
+
+   <div class="small-box bg-{{background}}">
+       <div class="inner">
+           <h3>{{symbol}}{{count}}</h3>
+
+           <p>{{title}}</p>
+       </div>
+       <div class="icon">
+           <i class="{{mainicon}}"></i>
+       </div>
+       <a *ngIf="info" routerLink="{{link}}" class="small-box-footer">
+           More info <i class="fas fa-arrow-circle-right"></i>
+       </a>
+   </div>
