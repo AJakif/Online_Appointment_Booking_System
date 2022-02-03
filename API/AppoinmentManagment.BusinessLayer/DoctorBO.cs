@@ -12,7 +12,19 @@ namespace AppoinmentManagment.BusinessLayer
 
             public string Name { get; set; }
 
+            public string Email { get; set; }
+
             public int SpecializationId { get; set; }
+
+            public string Specialization { get; set; }
+
+            public string Phone { get; set; }
+
+            public string Address { get; set; }
+
+            public string JoinDate { get; set; }
+
+            public decimal Fee { get; set; }
 
         }
     }

@@ -15,11 +15,13 @@ namespace AppoinmentManagment.DataAccessLayer.Repository
     {
         private readonly IConfiguration _config;
         private readonly ILogger<AdminApiRepository> _logger;
+        private readonly ISpecializationRepository _special;
 
-        public AdminApiRepository(IConfiguration config, ILogger<AdminApiRepository> logger)
+        public AdminApiRepository(IConfiguration config, ILogger<AdminApiRepository> logger, ISpecializationRepository special)
         {
             _config = config;
             _logger = logger;
+            _special = special;
         }
 
         public int CountPatient()
@@ -290,5 +292,51 @@ namespace AppoinmentManagment.DataAccessLayer.Repository
             }
             return remarkList;
         }
+
+        public List<DoctorBO> GetAllDoctorList()
+        {
+            string query = $"SELECT [Hospital].[dbo].[User].[Name],[Hospital].[dbo].[User].[Address],[Hospital].[dbo].[User].[Phone],[Hospital].[dbo].[User].[Email],[Hospital].[dbo].[Doctor].[DrId],[Hospital].[dbo].[Doctor].[SpecializationId],[Hospital].[dbo].[Doctor].[JoinDate],[Hospital].[dbo].[Doctor].[Fee]"+
+                "FROM[Hospital].[dbo].[User] INNER JOIN[Hospital].[dbo].[Doctor] ON[Hospital].[dbo].[User].[OId] = [Hospital].[dbo].[Doctor].[UserId] WHERE[Hospital].[dbo].[User].[TypeId] = 3";
+            List<DoctorBO> dbol = new List<DoctorBO>();
+            string connectionString = _config["ConnectionStrings:DefaultConnection"];
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string sql = query;
+                SqlCommand command = new SqlCommand(sql, connection);
+                using (SqlDataReader dataReader = command.ExecuteReader())
+                {
+                    while (dataReader.Read()) //make it single user
+                    {
+                        try
+                        {
+                            if (dataReader != null)
+                            {
+                                DoctorBO dbo = new DoctorBO()
+                                {
+                                    DrId = dataReader["DrId"].ToString(),
+                                    Name = dataReader["Name"].ToString(),
+                                    Phone = dataReader["Phone"].ToString(),
+                                    Email = dataReader["Email"].ToString(),
+                                    Address = dataReader["Address"].ToString(),
+                                    JoinDate = dataReader["JoinDate"].ToString(),
+                                    Fee = Convert.ToDecimal(dataReader["Fee"]),
+                                    Specialization = _special.GetSpecialization(Convert.ToInt32(dataReader["SpecializationId"])).ToString()
+                            };
+                                dbol.Add(dbo);
+                            }
+                        }
+                        catch (NullReferenceException e)
+                        {
+                            _logger.LogError($"'{e}' Exception");
+                        }
+                    }
+                }
+                connection.Close();
+            }
+
+            return dbol;
+        }
+        
     }
 }

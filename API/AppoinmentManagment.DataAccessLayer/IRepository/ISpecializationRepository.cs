@@ -11,5 +11,7 @@ namespace AppoinmentManagment.DataAccessLayer.IRepository
         int Add(SpecializationModel sm);
 
         List<SpecializationModel> GetAllSpecialization();
+        string GetSpecialization(int id);
+       
     }
 }

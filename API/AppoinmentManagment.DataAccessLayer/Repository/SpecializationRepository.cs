@@ -83,6 +83,39 @@ namespace AppoinmentManagment.DataAccessLayer.Repository
             return sml;
         }
 
+        public string GetSpecialization(int id)
+        {
+            string query = $"SELECT [Specialization] FROM[Hospital].[dbo].[Specialization] WHERE [OId] = {id}";
+
+            _logger.LogInformation("Entered in Get Specialization..");
+            string specialization = "";
+
+            string connectionString = _config["ConnectionStrings:DefaultConnection"];
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string sql = query;
+                SqlCommand command = new SqlCommand(sql, connection);
+                using (SqlDataReader dataReader = command.ExecuteReader())
+                {
+                    try
+                    {
+                        while (dataReader.Read()) //make it single user
+                        {
+                            specialization = dataReader["Specialization"].ToString();
+                        }
+                    }
+                    catch (NullReferenceException e)
+                    {
+                        _logger.LogWarning($"'{e}' Exception");
+                    }
+                }
+                connection.Close();
+            }
+            return specialization;
+        }
+
         public bool specAlreadyExists(SpecializationModel sm)
         {
             string query = $"SELECT [OId] ,[Specialization] FROM [Hospital].[dbo].[Specialization] where [Specialization]='{sm.Specialiaztion}'";

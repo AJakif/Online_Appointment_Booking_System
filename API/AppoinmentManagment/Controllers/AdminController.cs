@@ -141,6 +141,22 @@ namespace AppoinmentManagment.Controllers
         }
 
         [HttpGet]
+        [Route("api/admin/GetAllDoctor")]
+        public IActionResult GetAllDoctorList()
+        {
+            List<DoctorBO> doctor = _admin.GetAllDoctorList();
+            return Ok(new { data = doctor });
+        }
+
+        [HttpGet]
+        [Route("api/admin/GetAllSpecialization")]
+        public IActionResult GetAllSpecializationList()
+        {
+            List<SpecializationModel> sml = _special.GetAllSpecialization();
+            return Ok(new { data = sml });
+        }
+
+        [HttpGet]
         [Route("api/admin/Report/monthlyDeposit/")]
         public IActionResult GetMonthlyDeposit()
         {

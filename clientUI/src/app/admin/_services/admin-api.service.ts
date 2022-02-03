@@ -32,4 +32,16 @@ export class AdminApiService {
   public getPatients(){
     return this.httpclient.get(this.PATH_OF_API + "/admin/GetAllPatient", {headers:this.requestHeader});
   }
+  public getDoctors(){
+    return this.httpclient.get(this.PATH_OF_API + "/admin/GetAllDoctor", {headers:this.requestHeader});
+  }
+  public getSpecialization(){
+    return this.httpclient.get(this.PATH_OF_API + "/admin/GetAllSpecialization", {headers:this.requestHeader});
+  }
+  public monthlyDeposit(){
+    return this.httpclient.get(this.PATH_OF_API + "/admin/Report/monthlyDeposit", {headers:this.requestHeader});
+  }
+  public yearlyDeposit(){
+    return this.httpclient.get(this.PATH_OF_API + "/admin/Report/yearlyDeposit", {headers:this.requestHeader});
+  }
 }

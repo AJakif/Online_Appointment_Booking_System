@@ -15,5 +15,7 @@ namespace AppoinmentManagment.DataAccessLayer.IRepository
         List<MonthlyDepositBO> GetMonthlyDeposit();
         List<Monthly> GetYearlyDeposit();
         List<UserBO> GetAllPatientList();
+
+        List<DoctorBO> GetAllDoctorList();
     }
 }

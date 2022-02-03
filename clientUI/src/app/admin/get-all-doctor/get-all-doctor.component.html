@@ -1,40 +1,70 @@
 <div class="container">
-    <h1 class="text-center">-Doctors-</h1>
-    <hr />
-    <div class="row">
-      <app-route-button
-        [btnColor]="'primary'"
-        [btnPosition]="'float-end'"
-        [title]="'Add Doctor'"
-        [link]="'/admin/addDoctor'"
-        [icon]="'fas fa-plus'"
-      ></app-route-button>
+  <h1 class="text-center">-Doctors-</h1>
+  <hr />
+  <div class="row">
+    <app-route-button
+      [btnColor]="'primary'"
+      [btnPosition]="'float-end'"
+      [title]="'Add Doctor'"
+      [link]="'/admin/addDoctor'"
+      [icon]="'fas fa-plus'"
+    ></app-route-button>
+  </div>
+  <br />
+  <div class="row">
+    <div class="border backgroundWhite col-lg">
+      <br />
+      <table
+        id="dtBasicExample"
+        class="table table-striped table-bordered table-sm"
+        cellspacing="0"
+        width="100%"
+      >
+        <thead>
+          <tr>
+            <th class="th-sm text-center">Doctor ID</th>
+            <th class="th-sm text-center">Name</th>
+            <th class="th-sm text-center">Specialization</th>
+            <th class="th-sm text-center">Phone</th>
+            <th class="th-sm text-center">Address</th>
+            <th class="th-sm text-center">Email</th>
+            <th class="th-sm text-center">Join Date</th>
+            <th class="th-sm text-center">Fee</th>
+            <th class="th-sm text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableData" *ngFor="let doctor of doctors">
+          <tr>
+            <td class="text-center">{{ doctor.drId }}</td>
+            <td class="text-center">{{ doctor.name }}</td>
+            <td class="text-center">{{ doctor.specialization }}</td>
+            <td class="text-center">{{ doctor.phone }}</td>
+            <td class="text-center">{{ doctor.address }}</td>
+            <td class="text-center">{{ doctor.email }}</td>
+            <td class="text-center">{{ doctor.joinDate }}</td>
+            <td class="text-center">{{ doctor.fee }}</td>
+            <td class="text-center">
+              <div class="text-center">
+                <a
+                  class="btn btn-success text-white edit me-1"
+                  style="cursor: pointer; width: 60px"
+                  data-toggle="modal"
+                  data-target="#EditRecord"
+                  data-id="@trans.OId"
+                >
+                  <i class="far fa-edit"></i>
+                </a>
+                <a
+                  class="btn btn-danger text-white"
+                  style="cursor: pointer; width: 60px"
+                >
+                  <i class="far fa-trash-alt"></i>
+                </a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <br />
-    <div class="row">
-      <div class="border backgroundWhite col-lg">
-        <br />
-        <table
-          id="dtBasicExample"
-          class="table table-striped table-bordered table-sm"
-          cellspacing="0"
-          width="100%"
-        >
-          <thead>
-            <tr>
-              <th class="th-sm text-center">Doctor ID</th>
-              <th class="th-sm text-center">Name</th>
-              <th class="th-sm text-center">Specialization</th>
-              <th class="th-sm text-center">Phone</th>
-              <th class="th-sm text-center">Address</th>
-              <th class="th-sm text-center">Join Date</th>
-              <th class="th-sm text-center">Fee</th>
-              <th class="th-sm text-center">Action</th>
-            </tr>
-          </thead>
-          <tbody id="tableData"></tbody>
-        </table>
-      </div>
-    </div>
-    
+  </div>
 </div>

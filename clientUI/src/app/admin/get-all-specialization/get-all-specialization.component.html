@@ -1,46 +1,68 @@
 <div class="container">
-    <h1 class="text-center text-danger">-Specializations-</h1>
-<hr />
-<div class="row">
-    <!-- <app-route-button
-        [btnColor]="'primary'"
-        [btnPosition]="'float-end'"
-        [title]="'Add Specialization'"
-        [link]="'/admin/addSpecialization'"
-        [icon]="'fas fa-plus'"
-      ></app-route-button> -->
-
-      <form #regForm="ngForm" >
-        <div class="row mb-3">
-          <div class="form-group col-md-6">
-            <input placeholder="Specialization Name" ngModel name="name" class="form-control" />
-          </div>
-          <div class="form-group col-md-3">
-            <a type="submit" class="btn btn-primary" style="color:white"> <i class="fas fa-plus"></i></a>
-          </div>
-        
-          
+  <h1 class="text-center text-danger">-Specializations-</h1>
+  <hr />
+  <div class="row">
+    <form #regForm="ngForm">
+      <div class="row mb-3">
+        <div class="form-group col-md-6">
+          <input
+            placeholder="Specialization Name"
+            ngModel
+            name="name"
+            class="form-control"
+          />
         </div>
-      </form>
-</div>
-<br />
-<div class="row">
+        <div class="form-group col-md-3">
+          <a type="submit" class="btn btn-primary" style="color: white">
+            <i class="fas fa-plus"></i
+          ></a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <br />
+  <div class="row">
     <div class="border backgroundWhite col-lg">
-        <br />
-        <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
-            <thead>
-                <tr>
-                    <th class="th-sm text-center">Specialization ID</th>
-                    <th class="th-sm text-center">Specialization Name</th>
-                    <th class="th-sm text-center">Action</th>
-                </tr>
-            </thead>
-            <tbody id="tableData">
-            </tbody>
-        </table>
+      <br />
+      <table
+        id="dtBasicExample"
+        class="table table-striped table-bordered table-sm"
+        cellspacing="0"
+        width="100%"
+      >
+        <thead>
+          <tr>
+            <th class="th-sm text-center">Specialization ID</th>
+            <th class="th-sm text-center">Specialization Name</th>
+            <th class="th-sm text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableData" *ngFor="let special of specializations">
+          <tr>
+            <td>{{special.oId}}</td>
+            <td>{{special.specialiaztion}}</td>
+            <td class="text-center">
+              <div class="text-center">
+                <a
+                  class="btn btn-success text-white edit me-1"
+                  style="cursor: pointer; width: 60px"
+                  data-toggle="modal"
+                  data-target="#EditRecord"
+                  data-id="@trans.OId"
+                >
+                  <i class="far fa-edit"></i>
+                </a>
+                <a
+                  class="btn btn-danger text-white"
+                  style="cursor: pointer; width: 60px"
+                >
+                  <i class="far fa-trash-alt"></i>
+                </a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-</div>
-
-
-
+  </div>
 </div>
